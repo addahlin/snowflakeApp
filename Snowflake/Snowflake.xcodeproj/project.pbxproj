@@ -49,6 +49,9 @@
 		00B5A0F419E906CC00757F29 /* _Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0F319E906CC00757F29 /* _Activity.m */; };
 		00B5A0F719E906CC00757F29 /* _Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0F619E906CC00757F29 /* _Location.m */; };
 		00B5A0FA19E906CC00757F29 /* _Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0F919E906CC00757F29 /* _Report.m */; };
+		00B5A0FD19E9B72A00757F29 /* PNGSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0FC19E9B72A00757F29 /* PNGSettings.m */; };
+		00B5A10019E9BCDB00757F29 /* PNGSnowIOCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0FF19E9BCDB00757F29 /* PNGSnowIOCommunicator.m */; };
+		00B5A10419E9BFE400757F29 /* PNGGetDataFromURLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10319E9BFE400757F29 /* PNGGetDataFromURLHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +152,12 @@
 		00B5A0F619E906CC00757F29 /* _Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Location.m; sourceTree = "<group>"; };
 		00B5A0F819E906CC00757F29 /* _Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Report.h; sourceTree = "<group>"; };
 		00B5A0F919E906CC00757F29 /* _Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Report.m; sourceTree = "<group>"; };
+		00B5A0FB19E9B72A00757F29 /* PNGSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGSettings.h; sourceTree = "<group>"; };
+		00B5A0FC19E9B72A00757F29 /* PNGSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGSettings.m; sourceTree = "<group>"; };
+		00B5A0FE19E9BCDB00757F29 /* PNGSnowIOCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGSnowIOCommunicator.h; sourceTree = "<group>"; };
+		00B5A0FF19E9BCDB00757F29 /* PNGSnowIOCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGSnowIOCommunicator.m; sourceTree = "<group>"; };
+		00B5A10219E9BFE400757F29 /* PNGGetDataFromURLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGGetDataFromURLHelper.h; sourceTree = "<group>"; };
+		00B5A10319E9BFE400757F29 /* PNGGetDataFromURLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGGetDataFromURLHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +200,7 @@
 		00B5A03C19E8F9D300757F29 /* Snowflake */ = {
 			isa = PBXGroup;
 			children = (
+				00B5A10119E9BFB800757F29 /* Helpers */,
 				00B5A0C019E900FD00757F29 /* Entities */,
 				00B5A06719E8FC9400757F29 /* MagicalRecord */,
 				00B5A04119E8F9D300757F29 /* AppDelegate.h */,
@@ -202,6 +212,8 @@
 				00B5A04F19E8F9D300757F29 /* LaunchScreen.xib */,
 				00B5A04419E8F9D300757F29 /* Snowflake.xcdatamodeld */,
 				00B5A03D19E8F9D300757F29 /* Supporting Files */,
+				00B5A0FE19E9BCDB00757F29 /* PNGSnowIOCommunicator.h */,
+				00B5A0FF19E9BCDB00757F29 /* PNGSnowIOCommunicator.m */,
 			);
 			path = Snowflake;
 			sourceTree = "<group>";
@@ -211,6 +223,8 @@
 			children = (
 				00B5A03E19E8F9D300757F29 /* Info.plist */,
 				00B5A03F19E8F9D300757F29 /* main.m */,
+				00B5A0FB19E9B72A00757F29 /* PNGSettings.h */,
+				00B5A0FC19E9B72A00757F29 /* PNGSettings.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -366,6 +380,15 @@
 			name = Generated;
 			sourceTree = "<group>";
 		};
+		00B5A10119E9BFB800757F29 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				00B5A10219E9BFE400757F29 /* PNGGetDataFromURLHelper.h */,
+				00B5A10319E9BFE400757F29 /* PNGGetDataFromURLHelper.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -480,6 +503,8 @@
 				00B5A04319E8F9D300757F29 /* AppDelegate.m in Sources */,
 				00B5A0B719E8FC9400757F29 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				00B5A0B519E8FC9400757F29 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
+				00B5A0FD19E9B72A00757F29 /* PNGSettings.m in Sources */,
+				00B5A10419E9BFE400757F29 /* PNGGetDataFromURLHelper.m in Sources */,
 				00B5A04019E8F9D300757F29 /* main.m in Sources */,
 				00B5A0B619E8FC9400757F29 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				00B5A0BA19E8FC9400757F29 /* MagicalRecord+iCloud.m in Sources */,
@@ -504,6 +529,7 @@
 				00B5A0AD19E8FC9400757F29 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				00B5A0F119E906CB00757F29 /* _Region.m in Sources */,
 				00B5A0FA19E906CC00757F29 /* _Report.m in Sources */,
+				00B5A10019E9BCDB00757F29 /* PNGSnowIOCommunicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
