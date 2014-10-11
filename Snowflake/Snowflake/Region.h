@@ -7,17 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import "_Region.h"
 
-@class Location;
-
-@interface Region : NSManagedObject
-
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * neLatitude;
-@property (nonatomic, retain) NSString * neLongitude;
-@property (nonatomic, retain) NSString * swLatitude;
-@property (nonatomic, retain) NSString * swLongitude;
-@property (nonatomic, retain) Location *locations;
+@interface _Region (Region)
 
 @end

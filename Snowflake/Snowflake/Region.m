@@ -7,16 +7,7 @@
 //
 
 #import "Region.h"
-#import "Location.h"
 
-
-@implementation Region
-
-@dynamic name;
-@dynamic neLatitude;
-@dynamic neLongitude;
-@dynamic swLatitude;
-@dynamic swLongitude;
-@dynamic locations;
+@implementation _Region (Region)
 
 @end

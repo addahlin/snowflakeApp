@@ -8,14 +8,6 @@
 
 #import "Activity.h"
 
-
-@implementation Activity
-
-@dynamic id;
-@dynamic name;
-@dynamic iconOnURL;
-@dynamic iconOffURL;
-@dynamic iconOn;
-@dynamic iconOff;
+@implementation _Activity (Activity)
 
 @end
