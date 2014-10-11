@@ -10,6 +10,9 @@
 
  @since Available in v2.3 and later.
  */
+
+#import "Foundation/Foundation.h"
+
 typedef NS_ENUM(NSUInteger, MagicalRecordVersionNumber)
 {
     /** Version 2.2.0 */

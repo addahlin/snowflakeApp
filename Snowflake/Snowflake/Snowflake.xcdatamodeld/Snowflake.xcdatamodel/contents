@@ -33,7 +33,7 @@
         <attribute name="poster_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="raw_region_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="raw_trail_id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="raw_trail_name" optional="YES" syncable="YES"/>
+        <attribute name="raw_trail_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="trail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="trails" inverseEntity="Location" syncable="YES"/>
     </entity>

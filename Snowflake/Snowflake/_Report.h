@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSDate * posted_date;
 @property (nonatomic, retain) NSString * poster_name;
 @property (nonatomic, retain) NSString * raw_region_id;
-@property (nonatomic, retain) UNKNOWN_TYPE raw_trail_name;
+@property (nonatomic, retain) NSString * raw_trail_name;
 @property (nonatomic, retain) NSString * latitude;
 @property (nonatomic, retain) NSString * longitude;
 @property (nonatomic, retain) _Location *trail;
