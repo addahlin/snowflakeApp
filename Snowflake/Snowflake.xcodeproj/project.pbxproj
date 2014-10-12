@@ -52,6 +52,7 @@
 		00B5A0FD19E9B72A00757F29 /* PNGSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0FC19E9B72A00757F29 /* PNGSettings.m */; };
 		00B5A10019E9BCDB00757F29 /* PNGSnowIOCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0FF19E9BCDB00757F29 /* PNGSnowIOCommunicator.m */; };
 		00B5A10419E9BFE400757F29 /* PNGGetDataFromURLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10319E9BFE400757F29 /* PNGGetDataFromURLHelper.m */; };
+		00B5A10719E9FEBB00757F29 /* PNGReportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10619E9FEBB00757F29 /* PNGReportManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,9 @@
 		00B5A0FF19E9BCDB00757F29 /* PNGSnowIOCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGSnowIOCommunicator.m; sourceTree = "<group>"; };
 		00B5A10219E9BFE400757F29 /* PNGGetDataFromURLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGGetDataFromURLHelper.h; sourceTree = "<group>"; };
 		00B5A10319E9BFE400757F29 /* PNGGetDataFromURLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGGetDataFromURLHelper.m; sourceTree = "<group>"; };
+		00B5A10519E9FEBB00757F29 /* PNGReportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGReportManager.h; sourceTree = "<group>"; };
+		00B5A10619E9FEBB00757F29 /* PNGReportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGReportManager.m; sourceTree = "<group>"; };
+		00B5A10819E9FF8800757F29 /* Entities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entities.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,8 +216,6 @@
 				00B5A04F19E8F9D300757F29 /* LaunchScreen.xib */,
 				00B5A04419E8F9D300757F29 /* Snowflake.xcdatamodeld */,
 				00B5A03D19E8F9D300757F29 /* Supporting Files */,
-				00B5A0FE19E9BCDB00757F29 /* PNGSnowIOCommunicator.h */,
-				00B5A0FF19E9BCDB00757F29 /* PNGSnowIOCommunicator.m */,
 			);
 			path = Snowflake;
 			sourceTree = "<group>";
@@ -361,6 +363,7 @@
 				00B5A0EA19E9062F00757F29 /* Region.m */,
 				00B5A0EC19E9066F00757F29 /* Location.h */,
 				00B5A0ED19E9066F00757F29 /* Location.m */,
+				00B5A10819E9FF8800757F29 /* Entities.h */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -385,6 +388,10 @@
 			children = (
 				00B5A10219E9BFE400757F29 /* PNGGetDataFromURLHelper.h */,
 				00B5A10319E9BFE400757F29 /* PNGGetDataFromURLHelper.m */,
+				00B5A0FE19E9BCDB00757F29 /* PNGSnowIOCommunicator.h */,
+				00B5A0FF19E9BCDB00757F29 /* PNGSnowIOCommunicator.m */,
+				00B5A10519E9FEBB00757F29 /* PNGReportManager.h */,
+				00B5A10619E9FEBB00757F29 /* PNGReportManager.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -520,6 +527,7 @@
 				00B5A0BC19E8FC9400757F29 /* MagicalRecord+Setup.m in Sources */,
 				00B5A0B919E8FC9400757F29 /* MagicalRecord+ErrorHandling.m in Sources */,
 				00B5A0B819E8FC9400757F29 /* MagicalRecord+Actions.m in Sources */,
+				00B5A10719E9FEBB00757F29 /* PNGReportManager.m in Sources */,
 				00B5A0F719E906CC00757F29 /* _Location.m in Sources */,
 				00B5A04619E8F9D300757F29 /* Snowflake.xcdatamodeld in Sources */,
 				00B5A0F419E906CC00757F29 /* _Activity.m in Sources */,
