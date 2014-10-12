@@ -17,5 +17,6 @@
 
 - (NSString *)getServerBaseURL;
 - (int) getDefaultServerTimeout;
+- (NSNumber *) getDefaultNumberOfReportsToFetchFromServer;
 
 @end

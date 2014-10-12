@@ -25,11 +25,30 @@
     //TEMPORARY: just for testing before we have a real infrastructure setup
     PNGSnowIOCommunicator *serverComm = [[PNGSnowIOCommunicator alloc] init];
     
-    //See if we can get activities from the server
+    /*
+    //Get activities from the server
     [serverComm getActivitiesJSONwithCompletionBlock:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSLog(@"Got response for activities: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
     } ];
     
+    //Get Regions from the server
+    [serverComm getRegionsJSONwithCompletionBlock:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSLog(@"Got response for regions: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    } ];
+    
+    //Get Locations from the server
+    [serverComm getLocationsJSONwithCompletionBlock:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSLog(@"Got response for regions: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    } ];
+     */
+    
+    //Get most recent Reports
+    NSDictionary *options = @{@"rows" : @1};
+    
+    //Get Locations from the server
+    [serverComm getMostRecentReportsWithOptions:options completionBlock:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSLog(@"Got response for reports: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    } ];
     
 }
 

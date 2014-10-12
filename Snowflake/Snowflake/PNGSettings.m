@@ -35,4 +35,9 @@
     return 30; //seconds
 }
 
+//By default, the server communicator will fetch this many reports
+- (NSNumber *) getDefaultNumberOfReportsToFetchFromServer {
+    return @20;
+}
+
 @end

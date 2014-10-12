@@ -34,7 +34,7 @@
 // options is just a dictionary with GET parameters
 - (NSString *)getReportURLWithOptions:(NSDictionary *)options{
     
-    NSString *reportBase = [NSString stringWithFormat:@"%@reports/", [[PNGSettings sharedInstance] getServerBaseURL]];
+    NSString *reportBase = [NSString stringWithFormat:@"%@reports", [[PNGSettings sharedInstance] getServerBaseURL]];
     
     if (options == nil || [options count] == 0){
         return reportBase;
@@ -46,25 +46,25 @@
         [getComps addObject:[NSString stringWithFormat:@"%@=%@", option, (NSString *)[options objectForKey:option]]];
     }
     
-    NSString *urlString = [NSString stringWithFormat:@"%@&%@", reportBase, [getComps componentsJoinedByString:@"="]];
+    NSString *urlString = [NSString stringWithFormat:@"%@?%@", reportBase, [getComps componentsJoinedByString:@"&"]];
     
     return urlString;
 }
 
 -(NSString *)getActivitiesURL{
-    NSString *activitiesURL = [NSString stringWithFormat:@"%@activities/", [[PNGSettings sharedInstance] getServerBaseURL]];
+    NSString *activitiesURL = [NSString stringWithFormat:@"%@activities", [[PNGSettings sharedInstance] getServerBaseURL]];
     
     return activitiesURL;
 }
 
 -(NSString *)getRegionsURL{
-    NSString *url = [NSString stringWithFormat:@"%@regions/", [[PNGSettings sharedInstance] getServerBaseURL]];
+    NSString *url = [NSString stringWithFormat:@"%@regions", [[PNGSettings sharedInstance] getServerBaseURL]];
     
     return url;
 }
 
 -(NSString *)getLocationsURL{
-    NSString *url = [NSString stringWithFormat:@"%@locations/", [[PNGSettings sharedInstance] getServerBaseURL]];
+    NSString *url = [NSString stringWithFormat:@"%@locations", [[PNGSettings sharedInstance] getServerBaseURL]];
     
     return url;
 }
@@ -72,21 +72,58 @@
 -(void) getActivitiesJSONwithCompletionBlock:(void (^)(NSData* data, NSHTTPURLResponse *response, NSError* error))completionBlock{
     NSString *activitiesURL = [self getActivitiesURL];
     
-    //Run it on a background thread...
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
-                                             (unsigned long)NULL), ^(void) {
-        NSError *error;
-        NSHTTPURLResponse  *response;
-        
-        NSData *data = [PNGGetDataFromURLHelper getDataFromURLSync:activitiesURL response:&response error:&error];
-        
-        //Call the completionBlock on the main thread
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            completionBlock(data, response, error);
-        });
+    //Just forward the completion block to the URL helper
+    [PNGGetDataFromURLHelper getDataFromURLAsync:activitiesURL withCompletion:completionBlock];
+}
 
-    });
+-(void) getRegionsJSONwithCompletionBlock:(void (^)(NSData* data, NSHTTPURLResponse *response, NSError* error))completionBlock{
+    NSString *regionsURL = [self getRegionsURL];
+    
+    //Just forward the completion block to the URL helper
+    [PNGGetDataFromURLHelper getDataFromURLAsync:regionsURL withCompletion:completionBlock];
+    
+};
 
+-(void) getLocationsJSONwithCompletionBlock:(void (^)(NSData* data, NSHTTPURLResponse *response, NSError* error))completionBlock {
+    NSString *locationsURL = [self getLocationsURL];
+    
+    //Just forward the completion block to the URL helper
+    [PNGGetDataFromURLHelper getDataFromURLAsync:locationsURL withCompletion:completionBlock];
+}
+
+-(void) getMostRecentReportsWithCompletionBlock:(void (^)(NSData* data, NSHTTPURLResponse *response, NSError* error))completionBlock {
+    
+    //Let the server decide how many to send back
+    NSString *mostRecentURL = [self getReportURLWithOptions:nil];
+    
+    //Just forward the completion block to the URL helper
+    [PNGGetDataFromURLHelper getDataFromURLAsync:mostRecentURL withCompletion:completionBlock];
+}
+
+-(void) getMostRecentReportsWithOptions:(NSDictionary *) options
+                               completionBlock:(void (^)(NSData* data, NSHTTPURLResponse *response, NSError* error)) completionBlock{
+    
+    NSString *mostRecentURL = [self getReportURLWithOptions:options];
+ 
+    //Just forward the completion block to the URL helper
+    [PNGGetDataFromURLHelper getDataFromURLAsync:mostRecentURL withCompletion:completionBlock];
+    
+}
+
+-(void) getMostRececentReportsForLocation: (NSString *)locationID options:(NSDictionary *) options completionBlock:(void (^)(NSData* data, NSHTTPURLResponse *response, NSError* error)) completionBlock{
+    
+    //Just add in the trail to the options
+    
+    NSMutableDictionary *dict;
+    if (options == nil){
+        dict = [[NSMutableDictionary alloc] init];
+    } else {
+        dict = [options mutableCopy];
+    }
+    
+    dict[@"trail"] = locationID;
+    
+    [self getMostRecentReportsWithOptions:options completionBlock:completionBlock];
 }
 
 
