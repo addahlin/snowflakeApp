@@ -41,18 +41,18 @@
 		00B5A0BC19E8FC9400757F29 /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A09C19E8FC9400757F29 /* MagicalRecord+Setup.m */; };
 		00B5A0BD19E8FC9400757F29 /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A09E19E8FC9400757F29 /* MagicalRecord+ShorthandSupport.m */; };
 		00B5A0BE19E8FC9400757F29 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0A019E8FC9400757F29 /* MagicalRecord.m */; };
-		00B5A0E519E9059A00757F29 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0E419E9059900757F29 /* Report.m */; };
-		00B5A0E819E905F100757F29 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0E719E905F100757F29 /* Activity.m */; };
-		00B5A0EB19E9062F00757F29 /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0EA19E9062F00757F29 /* Region.m */; };
-		00B5A0EE19E9066F00757F29 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0ED19E9066F00757F29 /* Location.m */; };
-		00B5A0F119E906CB00757F29 /* _Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0F019E906CB00757F29 /* _Region.m */; };
-		00B5A0F419E906CC00757F29 /* _Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0F319E906CC00757F29 /* _Activity.m */; };
-		00B5A0F719E906CC00757F29 /* _Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0F619E906CC00757F29 /* _Location.m */; };
-		00B5A0FA19E906CC00757F29 /* _Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0F919E906CC00757F29 /* _Report.m */; };
+		00B5A0E519E9059A00757F29 /* Report+user.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0E419E9059900757F29 /* Report+user.m */; };
+		00B5A0E819E905F100757F29 /* Activity+user.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0E719E905F100757F29 /* Activity+user.m */; };
+		00B5A0EB19E9062F00757F29 /* Region+user.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0EA19E9062F00757F29 /* Region+user.m */; };
+		00B5A0EE19E9066F00757F29 /* Location+user.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0ED19E9066F00757F29 /* Location+user.m */; };
 		00B5A0FD19E9B72A00757F29 /* PNGSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0FC19E9B72A00757F29 /* PNGSettings.m */; };
 		00B5A10019E9BCDB00757F29 /* PNGSnowIOCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0FF19E9BCDB00757F29 /* PNGSnowIOCommunicator.m */; };
 		00B5A10419E9BFE400757F29 /* PNGGetDataFromURLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10319E9BFE400757F29 /* PNGGetDataFromURLHelper.m */; };
 		00B5A10719E9FEBB00757F29 /* PNGReportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10619E9FEBB00757F29 /* PNGReportManager.m */; };
+		00B5A10B19EA06E800757F29 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10A19EA06E800757F29 /* Activity.m */; };
+		00B5A10E19EA06E800757F29 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10D19EA06E800757F29 /* Report.m */; };
+		00B5A11119EA06E800757F29 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A11019EA06E800757F29 /* Location.m */; };
+		00B5A11419EA06E800757F29 /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A11319EA06E800757F29 /* Region.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,22 +137,14 @@
 		00B5A0A219E8FC9400757F29 /* MagicalRecordLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordLogging.h; sourceTree = "<group>"; };
 		00B5A0A319E8FC9400757F29 /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		00B5A0A419E8FC9400757F29 /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
-		00B5A0E319E9059900757F29 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
-		00B5A0E419E9059900757F29 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
-		00B5A0E619E905F100757F29 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
-		00B5A0E719E905F100757F29 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
-		00B5A0E919E9062F00757F29 /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Region.h; sourceTree = "<group>"; };
-		00B5A0EA19E9062F00757F29 /* Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Region.m; sourceTree = "<group>"; };
-		00B5A0EC19E9066F00757F29 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		00B5A0ED19E9066F00757F29 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		00B5A0EF19E906CB00757F29 /* _Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Region.h; sourceTree = "<group>"; };
-		00B5A0F019E906CB00757F29 /* _Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Region.m; sourceTree = "<group>"; };
-		00B5A0F219E906CC00757F29 /* _Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Activity.h; sourceTree = "<group>"; };
-		00B5A0F319E906CC00757F29 /* _Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Activity.m; sourceTree = "<group>"; };
-		00B5A0F519E906CC00757F29 /* _Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Location.h; sourceTree = "<group>"; };
-		00B5A0F619E906CC00757F29 /* _Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Location.m; sourceTree = "<group>"; };
-		00B5A0F819E906CC00757F29 /* _Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Report.h; sourceTree = "<group>"; };
-		00B5A0F919E906CC00757F29 /* _Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Report.m; sourceTree = "<group>"; };
+		00B5A0E319E9059900757F29 /* Report+user.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Report+user.h"; sourceTree = "<group>"; };
+		00B5A0E419E9059900757F29 /* Report+user.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Report+user.m"; sourceTree = "<group>"; };
+		00B5A0E619E905F100757F29 /* Activity+user.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Activity+user.h"; sourceTree = "<group>"; };
+		00B5A0E719E905F100757F29 /* Activity+user.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Activity+user.m"; sourceTree = "<group>"; };
+		00B5A0E919E9062F00757F29 /* Region+user.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Region+user.h"; sourceTree = "<group>"; };
+		00B5A0EA19E9062F00757F29 /* Region+user.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Region+user.m"; sourceTree = "<group>"; };
+		00B5A0EC19E9066F00757F29 /* Location+user.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Location+user.h"; sourceTree = "<group>"; };
+		00B5A0ED19E9066F00757F29 /* Location+user.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Location+user.m"; sourceTree = "<group>"; };
 		00B5A0FB19E9B72A00757F29 /* PNGSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGSettings.h; sourceTree = "<group>"; };
 		00B5A0FC19E9B72A00757F29 /* PNGSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGSettings.m; sourceTree = "<group>"; };
 		00B5A0FE19E9BCDB00757F29 /* PNGSnowIOCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGSnowIOCommunicator.h; sourceTree = "<group>"; };
@@ -161,7 +153,14 @@
 		00B5A10319E9BFE400757F29 /* PNGGetDataFromURLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGGetDataFromURLHelper.m; sourceTree = "<group>"; };
 		00B5A10519E9FEBB00757F29 /* PNGReportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGReportManager.h; sourceTree = "<group>"; };
 		00B5A10619E9FEBB00757F29 /* PNGReportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGReportManager.m; sourceTree = "<group>"; };
-		00B5A10819E9FF8800757F29 /* Entities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entities.h; sourceTree = "<group>"; };
+		00B5A10919EA06E800757F29 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		00B5A10A19EA06E800757F29 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		00B5A10C19EA06E800757F29 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
+		00B5A10D19EA06E800757F29 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
+		00B5A10F19EA06E800757F29 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		00B5A11019EA06E800757F29 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		00B5A11219EA06E800757F29 /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Region.h; sourceTree = "<group>"; };
+		00B5A11319EA06E800757F29 /* Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Region.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,15 +354,14 @@
 			isa = PBXGroup;
 			children = (
 				00B5A0C119E9010800757F29 /* Generated */,
-				00B5A0E319E9059900757F29 /* Report.h */,
-				00B5A0E419E9059900757F29 /* Report.m */,
-				00B5A0E619E905F100757F29 /* Activity.h */,
-				00B5A0E719E905F100757F29 /* Activity.m */,
-				00B5A0E919E9062F00757F29 /* Region.h */,
-				00B5A0EA19E9062F00757F29 /* Region.m */,
-				00B5A0EC19E9066F00757F29 /* Location.h */,
-				00B5A0ED19E9066F00757F29 /* Location.m */,
-				00B5A10819E9FF8800757F29 /* Entities.h */,
+				00B5A0E319E9059900757F29 /* Report+user.h */,
+				00B5A0E419E9059900757F29 /* Report+user.m */,
+				00B5A0E619E905F100757F29 /* Activity+user.h */,
+				00B5A0E719E905F100757F29 /* Activity+user.m */,
+				00B5A0E919E9062F00757F29 /* Region+user.h */,
+				00B5A0EA19E9062F00757F29 /* Region+user.m */,
+				00B5A0EC19E9066F00757F29 /* Location+user.h */,
+				00B5A0ED19E9066F00757F29 /* Location+user.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -371,14 +369,14 @@
 		00B5A0C119E9010800757F29 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				00B5A0F819E906CC00757F29 /* _Report.h */,
-				00B5A0F919E906CC00757F29 /* _Report.m */,
-				00B5A0F519E906CC00757F29 /* _Location.h */,
-				00B5A0F619E906CC00757F29 /* _Location.m */,
-				00B5A0F219E906CC00757F29 /* _Activity.h */,
-				00B5A0F319E906CC00757F29 /* _Activity.m */,
-				00B5A0EF19E906CB00757F29 /* _Region.h */,
-				00B5A0F019E906CB00757F29 /* _Region.m */,
+				00B5A11219EA06E800757F29 /* Region.h */,
+				00B5A11319EA06E800757F29 /* Region.m */,
+				00B5A10F19EA06E800757F29 /* Location.h */,
+				00B5A11019EA06E800757F29 /* Location.m */,
+				00B5A10C19EA06E800757F29 /* Report.h */,
+				00B5A10D19EA06E800757F29 /* Report.m */,
+				00B5A10919EA06E800757F29 /* Activity.h */,
+				00B5A10A19EA06E800757F29 /* Activity.m */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -503,8 +501,8 @@
 				00B5A0AA19E8FC9400757F29 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				00B5A0A519E8FC9400757F29 /* MagicalImportFunctions.m in Sources */,
 				00B5A0B419E8FC9400757F29 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
-				00B5A0E519E9059A00757F29 /* Report.m in Sources */,
-				00B5A0E819E905F100757F29 /* Activity.m in Sources */,
+				00B5A0E519E9059A00757F29 /* Report+user.m in Sources */,
+				00B5A0E819E905F100757F29 /* Activity+user.m in Sources */,
 				00B5A0B119E8FC9400757F29 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				00B5A0A719E8FC9400757F29 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				00B5A04319E8F9D300757F29 /* AppDelegate.m in Sources */,
@@ -512,31 +510,31 @@
 				00B5A0B519E8FC9400757F29 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				00B5A0FD19E9B72A00757F29 /* PNGSettings.m in Sources */,
 				00B5A10419E9BFE400757F29 /* PNGGetDataFromURLHelper.m in Sources */,
+				00B5A10B19EA06E800757F29 /* Activity.m in Sources */,
 				00B5A04019E8F9D300757F29 /* main.m in Sources */,
 				00B5A0B619E8FC9400757F29 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				00B5A0BA19E8FC9400757F29 /* MagicalRecord+iCloud.m in Sources */,
 				00B5A0BD19E8FC9400757F29 /* MagicalRecord+ShorthandSupport.m in Sources */,
+				00B5A11419EA06E800757F29 /* Region.m in Sources */,
 				00B5A0AE19E8FC9400757F29 /* NSManagedObject+MagicalFinders.m in Sources */,
 				00B5A0A919E8FC9400757F29 /* NSObject+MagicalDataImport.m in Sources */,
+				00B5A10E19EA06E800757F29 /* Report.m in Sources */,
 				00B5A0AB19E8FC9400757F29 /* NSString+MagicalDataImport.m in Sources */,
 				00B5A04919E8F9D300757F29 /* ViewController.m in Sources */,
-				00B5A0EB19E9062F00757F29 /* Region.m in Sources */,
+				00B5A0EB19E9062F00757F29 /* Region+user.m in Sources */,
 				00B5A0B319E8FC9400757F29 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				00B5A0AC19E8FC9400757F29 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				00B5A0BB19E8FC9400757F29 /* MagicalRecord+Options.m in Sources */,
 				00B5A0BC19E8FC9400757F29 /* MagicalRecord+Setup.m in Sources */,
+				00B5A11119EA06E800757F29 /* Location.m in Sources */,
 				00B5A0B919E8FC9400757F29 /* MagicalRecord+ErrorHandling.m in Sources */,
 				00B5A0B819E8FC9400757F29 /* MagicalRecord+Actions.m in Sources */,
 				00B5A10719E9FEBB00757F29 /* PNGReportManager.m in Sources */,
-				00B5A0F719E906CC00757F29 /* _Location.m in Sources */,
 				00B5A04619E8F9D300757F29 /* Snowflake.xcdatamodeld in Sources */,
-				00B5A0F419E906CC00757F29 /* _Activity.m in Sources */,
-				00B5A0EE19E9066F00757F29 /* Location.m in Sources */,
+				00B5A0EE19E9066F00757F29 /* Location+user.m in Sources */,
 				00B5A0B219E8FC9400757F29 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				00B5A0A819E8FC9400757F29 /* NSNumber+MagicalDataImport.m in Sources */,
 				00B5A0AD19E8FC9400757F29 /* NSManagedObject+MagicalDataImport.m in Sources */,
-				00B5A0F119E906CB00757F29 /* _Region.m in Sources */,
-				00B5A0FA19E906CC00757F29 /* _Report.m in Sources */,
 				00B5A10019E9BCDB00757F29 /* PNGSnowIOCommunicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

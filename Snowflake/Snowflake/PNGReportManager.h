@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Entities.h"
-
+#import "Region+user.h"
+#import "Report+user.h"
+#import "Activity+user.h"
+#import "Location+user.h"
 
 @interface PNGReportManager : NSObject
 
