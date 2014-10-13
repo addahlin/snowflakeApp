@@ -12,6 +12,8 @@
 #import "Activity+user.h"
 #import "Location+user.h"
 
+#import "PNGSnowIOCommunicator.h"
+
 @interface PNGReportManager : NSObject
 
 //The following return data immediately (most likely from Core Data)
@@ -21,6 +23,8 @@
 
 -(NSArray *) getLocationsInRegion: (Region *) region;
 
+-(NSArray *) getLocations;
+
 -(NSArray *) getReportsForRegion: (Region *) region;
 
 -(NSArray *) getReportsForLocation:(Location *) location;
@@ -29,15 +33,15 @@
 
 // Functions to sync the app with the server. This is done asynchronously.
 // Rather than provide callbacks, these will trigger NSNotification events interested parties can listen to
--(void) syncAll;
+-(void) syncAll:(void (^)(NSError* error))completionBlock;
 
--(void) syncRegions;
+-(void) syncRegions:(void (^)(NSError* error))completionBlock;
 
--(void) syncActivities;
+-(void) syncActivities:(void (^)(NSError* error))completionBlock;
 
--(void) syncLocations;
+-(void) syncLocations:(void (^)(NSError* error))completionBlock;
 
--(void) syncAllReports;
+-(void) syncAllReports:(void (^)(NSError* error))completionBlock;
 
 -(void) syncReportsForLocation:(Location *) location;
 

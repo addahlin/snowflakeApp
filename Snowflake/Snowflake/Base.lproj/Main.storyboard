@@ -1,25 +1,117 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Regions:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ev-8u-Kh1">
+                                <rect key="frame" x="0.0" y="44" width="154" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dD-Ua-LB7">
+                                <rect key="frame" x="278" y="44" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Locations:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4K-Kb-4fh">
+                                <rect key="frame" x="0.0" y="73" width="166" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWJ-U9-cIU">
+                                <rect key="frame" x="278" y="73" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Reports:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhn-1c-eGO">
+                                <rect key="frame" x="0.0" y="102" width="152" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jg3-ER-JJB">
+                                <rect key="frame" x="278" y="102" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Activities:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggp-g3-GjT">
+                                <rect key="frame" x="0.0" y="131" width="160" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ia3-eD-Ij1">
+                                <rect key="frame" x="278" y="131" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0UZ-3y-y82">
+                                <rect key="frame" x="0.0" y="160" width="53" height="30"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshUI:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PG5-RT-VVE"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3ev-8u-Kh1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Ebt-ia-9w9"/>
+                            <constraint firstItem="0UZ-3y-y82" firstAttribute="top" secondItem="ggp-g3-GjT" secondAttribute="bottom" constant="8" id="Gw8-ko-wcD"/>
+                            <constraint firstItem="3ev-8u-Kh1" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="24" id="NDr-Cl-v41"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ia3-eD-Ij1" secondAttribute="trailing" constant="-16" id="OX4-1E-InW"/>
+                            <constraint firstItem="Jg3-ER-JJB" firstAttribute="bottom" secondItem="hhn-1c-eGO" secondAttribute="bottom" id="P2k-Xl-KXs"/>
+                            <constraint firstItem="ggp-g3-GjT" firstAttribute="centerY" secondItem="Ia3-eD-Ij1" secondAttribute="centerY" id="Qby-zO-2WD"/>
+                            <constraint firstItem="3ev-8u-Kh1" firstAttribute="bottom" secondItem="4dD-Ua-LB7" secondAttribute="bottom" id="ZZN-aQ-A78"/>
+                            <constraint firstItem="y4K-Kb-4fh" firstAttribute="bottom" secondItem="EWJ-U9-cIU" secondAttribute="bottom" id="aNC-Zx-FSS"/>
+                            <constraint firstItem="hhn-1c-eGO" firstAttribute="top" secondItem="y4K-Kb-4fh" secondAttribute="bottom" constant="8" id="aU9-9f-9Yf"/>
+                            <constraint firstItem="hhn-1c-eGO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="eLy-UM-Sbu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EWJ-U9-cIU" secondAttribute="trailing" constant="-16" id="fKk-5B-DD9"/>
+                            <constraint firstItem="y4K-Kb-4fh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="hCy-bL-nsG"/>
+                            <constraint firstItem="ggp-g3-GjT" firstAttribute="top" secondItem="hhn-1c-eGO" secondAttribute="bottom" constant="8" id="k08-pl-Spo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jg3-ER-JJB" secondAttribute="trailing" constant="-16" id="mOF-2g-feV"/>
+                            <constraint firstItem="ggp-g3-GjT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="nMZ-Ey-ab1"/>
+                            <constraint firstItem="0UZ-3y-y82" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="pVT-Pn-XnC"/>
+                            <constraint firstItem="y4K-Kb-4fh" firstAttribute="top" secondItem="3ev-8u-Kh1" secondAttribute="bottom" constant="8" id="rp3-eu-FA0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4dD-Ua-LB7" secondAttribute="trailing" constant="-16" id="sHn-Xy-KNQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activitiesCountTextView" destination="Ia3-eD-Ij1" id="Tj3-hL-Qez"/>
+                        <outlet property="locationCountTextView" destination="EWJ-U9-cIU" id="MV9-dc-amd"/>
+                        <outlet property="regionCountTextView" destination="4dD-Ua-LB7" id="a5F-ro-ZF8"/>
+                        <outlet property="reportCountTextView" destination="Jg3-ER-JJB" id="3EO-21-FQP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="74.666666666666671" y="129.69333333333333"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

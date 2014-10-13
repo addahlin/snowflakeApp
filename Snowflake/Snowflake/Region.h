@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSString * neLongitude;
 @property (nonatomic, retain) NSString * swLatitude;
 @property (nonatomic, retain) NSString * swLongitude;
+@property (nonatomic, retain) NSString * id;
 @property (nonatomic, retain) Location *locations;
 
 @end

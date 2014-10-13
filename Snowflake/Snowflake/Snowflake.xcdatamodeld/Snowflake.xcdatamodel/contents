@@ -18,6 +18,7 @@
         <relationship name="trails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Report" inverseName="trail" inverseEntity="Report" syncable="YES"/>
     </entity>
     <entity name="Region" representedClassName="Region" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="neLatitude" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="neLongitude" optional="YES" attributeType="String" syncable="YES"/>
@@ -40,7 +41,7 @@
     <elements>
         <element name="Report" positionX="-63" positionY="-18" width="128" height="193"/>
         <element name="Location" positionX="-54" positionY="63" width="128" height="148"/>
-        <element name="Region" positionX="-36" positionY="81" width="128" height="133"/>
+        <element name="Region" positionX="-36" positionY="81" width="128" height="148"/>
         <element name="Activity" positionX="-27" positionY="108" width="128" height="133"/>
     </elements>
 </model>

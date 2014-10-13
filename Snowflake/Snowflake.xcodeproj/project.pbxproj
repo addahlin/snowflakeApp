@@ -50,9 +50,9 @@
 		00B5A10419E9BFE400757F29 /* PNGGetDataFromURLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10319E9BFE400757F29 /* PNGGetDataFromURLHelper.m */; };
 		00B5A10719E9FEBB00757F29 /* PNGReportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10619E9FEBB00757F29 /* PNGReportManager.m */; };
 		00B5A10B19EA06E800757F29 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10A19EA06E800757F29 /* Activity.m */; };
-		00B5A10E19EA06E800757F29 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10D19EA06E800757F29 /* Report.m */; };
 		00B5A11119EA06E800757F29 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A11019EA06E800757F29 /* Location.m */; };
-		00B5A11419EA06E800757F29 /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A11319EA06E800757F29 /* Region.m */; };
+		00B5A11A19EA0C3300757F29 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A11919EA0C3300757F29 /* Report.m */; };
+		00B5A11D19EA0C5F00757F29 /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A11C19EA0C5F00757F29 /* Region.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,12 +155,12 @@
 		00B5A10619E9FEBB00757F29 /* PNGReportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGReportManager.m; sourceTree = "<group>"; };
 		00B5A10919EA06E800757F29 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		00B5A10A19EA06E800757F29 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
-		00B5A10C19EA06E800757F29 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
-		00B5A10D19EA06E800757F29 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
 		00B5A10F19EA06E800757F29 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		00B5A11019EA06E800757F29 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		00B5A11219EA06E800757F29 /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Region.h; sourceTree = "<group>"; };
-		00B5A11319EA06E800757F29 /* Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Region.m; sourceTree = "<group>"; };
+		00B5A11819EA0C3300757F29 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
+		00B5A11919EA0C3300757F29 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
+		00B5A11B19EA0C5F00757F29 /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Region.h; sourceTree = "<group>"; };
+		00B5A11C19EA0C5F00757F29 /* Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Region.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,14 +369,14 @@
 		00B5A0C119E9010800757F29 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				00B5A11219EA06E800757F29 /* Region.h */,
-				00B5A11319EA06E800757F29 /* Region.m */,
 				00B5A10F19EA06E800757F29 /* Location.h */,
 				00B5A11019EA06E800757F29 /* Location.m */,
-				00B5A10C19EA06E800757F29 /* Report.h */,
-				00B5A10D19EA06E800757F29 /* Report.m */,
 				00B5A10919EA06E800757F29 /* Activity.h */,
 				00B5A10A19EA06E800757F29 /* Activity.m */,
+				00B5A11819EA0C3300757F29 /* Report.h */,
+				00B5A11919EA0C3300757F29 /* Report.m */,
+				00B5A11B19EA0C5F00757F29 /* Region.h */,
+				00B5A11C19EA0C5F00757F29 /* Region.m */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -509,16 +509,16 @@
 				00B5A0B719E8FC9400757F29 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				00B5A0B519E8FC9400757F29 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				00B5A0FD19E9B72A00757F29 /* PNGSettings.m in Sources */,
+				00B5A11A19EA0C3300757F29 /* Report.m in Sources */,
 				00B5A10419E9BFE400757F29 /* PNGGetDataFromURLHelper.m in Sources */,
 				00B5A10B19EA06E800757F29 /* Activity.m in Sources */,
 				00B5A04019E8F9D300757F29 /* main.m in Sources */,
 				00B5A0B619E8FC9400757F29 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				00B5A0BA19E8FC9400757F29 /* MagicalRecord+iCloud.m in Sources */,
+				00B5A11D19EA0C5F00757F29 /* Region.m in Sources */,
 				00B5A0BD19E8FC9400757F29 /* MagicalRecord+ShorthandSupport.m in Sources */,
-				00B5A11419EA06E800757F29 /* Region.m in Sources */,
 				00B5A0AE19E8FC9400757F29 /* NSManagedObject+MagicalFinders.m in Sources */,
 				00B5A0A919E8FC9400757F29 /* NSObject+MagicalDataImport.m in Sources */,
-				00B5A10E19EA06E800757F29 /* Report.m in Sources */,
 				00B5A0AB19E8FC9400757F29 /* NSString+MagicalDataImport.m in Sources */,
 				00B5A04919E8F9D300757F29 /* ViewController.m in Sources */,
 				00B5A0EB19E9062F00757F29 /* Region+user.m in Sources */,

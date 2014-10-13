@@ -17,6 +17,7 @@
 @dynamic neLongitude;
 @dynamic swLatitude;
 @dynamic swLongitude;
+@dynamic id;
 @dynamic locations;
 
 @end
