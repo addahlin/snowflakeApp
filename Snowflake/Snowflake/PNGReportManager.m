@@ -239,7 +239,7 @@
     [comm getMostRecentReportsWithOptions:nil completionBlock:^(NSData *data, NSHTTPURLResponse *response, NSError *error) {
         if (!error){
             NSLog(@"Retrieved JSON for Reports");
-            [self buildLocationsFromJSON:data];
+            [self buildReportsFromJSON:data];
         } else {
             NSLog(@"Error retrieving Reports from server");
         }
