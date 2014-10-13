@@ -58,10 +58,10 @@
     */
     PNGReportManager *reportManager = [[PNGReportManager alloc] init];
     
-    //[reportManager syncRegions];
-    //[reportManager syncActivities];
+    [reportManager syncAppData:^(NSError *error) {
+        
+    }];
     //[reportManager syncAllReports];
-    //[reportManager syncLocations];
     
     //Update the UI
     [self refreshUI:nil];

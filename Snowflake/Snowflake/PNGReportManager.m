@@ -176,9 +176,15 @@
         location.name = [locDict objectForKey:@"location_name"];
         location.raw_region_id = [locDict objectForKey:@"region"];
         
-        location.latitude = [locDict objectForKey:@"lat"];
+        NSString *lat = [locDict objectForKey:@"lat"];
+        if (lat != (id)[NSNull null]){
+            location.latitude = lat;
+        }
         
-        location.longitude = [locDict objectForKey:@"lng"];
+        NSString *lng = [locDict objectForKey:@"lng"];
+        if (lng != (id)[NSNull null]){
+            location.longitude = lng;
+        }
         
     }
     
