@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		005D96ED19EF812600567322 /* PNGListRegionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005D96EC19EF812600567322 /* PNGListRegionsViewController.m */; };
 		00B5A04019E8F9D300757F29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A03F19E8F9D300757F29 /* main.m */; };
 		00B5A04319E8F9D300757F29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A04219E8F9D300757F29 /* AppDelegate.m */; };
 		00B5A04619E8F9D300757F29 /* Snowflake.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A04419E8F9D300757F29 /* Snowflake.xcdatamodeld */; };
@@ -49,10 +50,11 @@
 		00B5A10019E9BCDB00757F29 /* PNGSnowIOCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0FF19E9BCDB00757F29 /* PNGSnowIOCommunicator.m */; };
 		00B5A10419E9BFE400757F29 /* PNGGetDataFromURLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10319E9BFE400757F29 /* PNGGetDataFromURLHelper.m */; };
 		00B5A10719E9FEBB00757F29 /* PNGReportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10619E9FEBB00757F29 /* PNGReportManager.m */; };
-		00B5A10B19EA06E800757F29 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10A19EA06E800757F29 /* Activity.m */; };
-		00B5A11119EA06E800757F29 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A11019EA06E800757F29 /* Location.m */; };
-		00B5A11A19EA0C3300757F29 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A11919EA0C3300757F29 /* Report.m */; };
-		00B5A11D19EA0C5F00757F29 /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A11C19EA0C5F00757F29 /* Region.m */; };
+		00F8189E19EF8B9B004F433B /* PNGListLocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F8189D19EF8B9B004F433B /* PNGListLocationsViewController.m */; };
+		00F818A119EF9321004F433B /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F818A019EF9321004F433B /* Region.m */; };
+		00F818A419EF9321004F433B /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F818A319EF9321004F433B /* Report.m */; };
+		00F818A719EF9321004F433B /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F818A619EF9321004F433B /* Activity.m */; };
+		00F818AA19EF9321004F433B /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F818A919EF9321004F433B /* Location.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		005D96EB19EF812600567322 /* PNGListRegionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGListRegionsViewController.h; sourceTree = "<group>"; };
+		005D96EC19EF812600567322 /* PNGListRegionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGListRegionsViewController.m; sourceTree = "<group>"; };
 		00B5A03A19E8F9D300757F29 /* Snowflake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snowflake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B5A03E19E8F9D300757F29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00B5A03F19E8F9D300757F29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -153,14 +157,16 @@
 		00B5A10319E9BFE400757F29 /* PNGGetDataFromURLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGGetDataFromURLHelper.m; sourceTree = "<group>"; };
 		00B5A10519E9FEBB00757F29 /* PNGReportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGReportManager.h; sourceTree = "<group>"; };
 		00B5A10619E9FEBB00757F29 /* PNGReportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGReportManager.m; sourceTree = "<group>"; };
-		00B5A10919EA06E800757F29 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
-		00B5A10A19EA06E800757F29 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
-		00B5A10F19EA06E800757F29 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		00B5A11019EA06E800757F29 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		00B5A11819EA0C3300757F29 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
-		00B5A11919EA0C3300757F29 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
-		00B5A11B19EA0C5F00757F29 /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Region.h; sourceTree = "<group>"; };
-		00B5A11C19EA0C5F00757F29 /* Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Region.m; sourceTree = "<group>"; };
+		00F8189C19EF8B9B004F433B /* PNGListLocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGListLocationsViewController.h; sourceTree = "<group>"; };
+		00F8189D19EF8B9B004F433B /* PNGListLocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGListLocationsViewController.m; sourceTree = "<group>"; };
+		00F8189F19EF9321004F433B /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Region.h; sourceTree = "<group>"; };
+		00F818A019EF9321004F433B /* Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Region.m; sourceTree = "<group>"; };
+		00F818A219EF9321004F433B /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
+		00F818A319EF9321004F433B /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
+		00F818A519EF9321004F433B /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		00F818A619EF9321004F433B /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		00F818A819EF9321004F433B /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		00F818A919EF9321004F433B /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		005D96EA19EF810500567322 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				005D96EB19EF812600567322 /* PNGListRegionsViewController.h */,
+				005D96EC19EF812600567322 /* PNGListRegionsViewController.m */,
+				00F8189C19EF8B9B004F433B /* PNGListLocationsViewController.h */,
+				00F8189D19EF8B9B004F433B /* PNGListLocationsViewController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
 		00B5A03119E8F9D300757F29 = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +220,7 @@
 		00B5A03C19E8F9D300757F29 /* Snowflake */ = {
 			isa = PBXGroup;
 			children = (
+				005D96EA19EF810500567322 /* controllers */,
 				00B5A10119E9BFB800757F29 /* Helpers */,
 				00B5A0C019E900FD00757F29 /* Entities */,
 				00B5A06719E8FC9400757F29 /* MagicalRecord */,
@@ -369,14 +387,14 @@
 		00B5A0C119E9010800757F29 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				00B5A10F19EA06E800757F29 /* Location.h */,
-				00B5A11019EA06E800757F29 /* Location.m */,
-				00B5A10919EA06E800757F29 /* Activity.h */,
-				00B5A10A19EA06E800757F29 /* Activity.m */,
-				00B5A11819EA0C3300757F29 /* Report.h */,
-				00B5A11919EA0C3300757F29 /* Report.m */,
-				00B5A11B19EA0C5F00757F29 /* Region.h */,
-				00B5A11C19EA0C5F00757F29 /* Region.m */,
+				00F818A819EF9321004F433B /* Location.h */,
+				00F818A919EF9321004F433B /* Location.m */,
+				00F818A519EF9321004F433B /* Activity.h */,
+				00F818A619EF9321004F433B /* Activity.m */,
+				00F818A219EF9321004F433B /* Report.h */,
+				00F818A319EF9321004F433B /* Report.m */,
+				00F8189F19EF9321004F433B /* Region.h */,
+				00F818A019EF9321004F433B /* Region.m */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -506,18 +524,21 @@
 				00B5A0B119E8FC9400757F29 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				00B5A0A719E8FC9400757F29 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				00B5A04319E8F9D300757F29 /* AppDelegate.m in Sources */,
+				005D96ED19EF812600567322 /* PNGListRegionsViewController.m in Sources */,
 				00B5A0B719E8FC9400757F29 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				00B5A0B519E8FC9400757F29 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
+				00F818A419EF9321004F433B /* Report.m in Sources */,
 				00B5A0FD19E9B72A00757F29 /* PNGSettings.m in Sources */,
-				00B5A11A19EA0C3300757F29 /* Report.m in Sources */,
+				00F818A119EF9321004F433B /* Region.m in Sources */,
+				00F818A719EF9321004F433B /* Activity.m in Sources */,
 				00B5A10419E9BFE400757F29 /* PNGGetDataFromURLHelper.m in Sources */,
-				00B5A10B19EA06E800757F29 /* Activity.m in Sources */,
+				00F8189E19EF8B9B004F433B /* PNGListLocationsViewController.m in Sources */,
 				00B5A04019E8F9D300757F29 /* main.m in Sources */,
 				00B5A0B619E8FC9400757F29 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				00B5A0BA19E8FC9400757F29 /* MagicalRecord+iCloud.m in Sources */,
-				00B5A11D19EA0C5F00757F29 /* Region.m in Sources */,
 				00B5A0BD19E8FC9400757F29 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				00B5A0AE19E8FC9400757F29 /* NSManagedObject+MagicalFinders.m in Sources */,
+				00F818AA19EF9321004F433B /* Location.m in Sources */,
 				00B5A0A919E8FC9400757F29 /* NSObject+MagicalDataImport.m in Sources */,
 				00B5A0AB19E8FC9400757F29 /* NSString+MagicalDataImport.m in Sources */,
 				00B5A04919E8F9D300757F29 /* ViewController.m in Sources */,
@@ -526,7 +547,6 @@
 				00B5A0AC19E8FC9400757F29 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				00B5A0BB19E8FC9400757F29 /* MagicalRecord+Options.m in Sources */,
 				00B5A0BC19E8FC9400757F29 /* MagicalRecord+Setup.m in Sources */,
-				00B5A11119EA06E800757F29 /* Location.m in Sources */,
 				00B5A0B919E8FC9400757F29 /* MagicalRecord+ErrorHandling.m in Sources */,
 				00B5A0B819E8FC9400757F29 /* MagicalRecord+Actions.m in Sources */,
 				00B5A10719E9FEBB00757F29 /* PNGReportManager.m in Sources */,
@@ -726,6 +746,7 @@
 				00B5A06219E8F9D300757F29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00B5A06319E8F9D300757F29 /* Build configuration list for PBXNativeTarget "SnowflakeTests" */ = {
 			isa = XCConfigurationList;
@@ -734,6 +755,7 @@
 				00B5A06519E8F9D300757F29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

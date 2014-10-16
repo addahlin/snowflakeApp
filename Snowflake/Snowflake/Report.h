@@ -2,7 +2,7 @@
 //  Report.h
 //  Snowflake
 //
-//  Created by Andrew Dahlin on 10/11/14.
+//  Created by Andrew Dahlin on 10/15/14.
 //  Copyright (c) 2014 Pangomedia. All rights reserved.
 //
 
@@ -14,14 +14,14 @@
 @interface Report : NSManagedObject
 
 @property (nonatomic, retain) NSString * id;
-@property (nonatomic, retain) NSString * raw_trail_id;
-@property (nonatomic, retain) NSString * text;
+@property (nonatomic, retain) NSString * latitude;
+@property (nonatomic, retain) NSString * longitude;
 @property (nonatomic, retain) NSDate * posted_date;
 @property (nonatomic, retain) NSString * poster_name;
 @property (nonatomic, retain) NSString * raw_region_id;
+@property (nonatomic, retain) NSString * raw_trail_id;
 @property (nonatomic, retain) NSString * raw_trail_name;
-@property (nonatomic, retain) NSString * latitude;
-@property (nonatomic, retain) NSString * longitude;
+@property (nonatomic, retain) NSString * text;
 @property (nonatomic, retain) Location *trail;
 
 @end

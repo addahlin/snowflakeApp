@@ -32,9 +32,7 @@
 -(NSArray *) getAllReports;
 
 // Functions to sync the app with the server. This is done asynchronously.
-// Rather than provide callbacks, these will trigger NSNotification events interested parties can listen to
--(void) syncAll:(void (^)(NSError* error))completionBlock;
-
+ 
 -(void) syncAppData:(void (^)(NSError* error))completionBlock;  //Syncs everything except reports
 
 -(void) syncRegions:(void (^)(NSError* error))completionBlock;

@@ -2,7 +2,7 @@
 //  Location.h
 //  Snowflake
 //
-//  Created by Andrew Dahlin on 10/11/14.
+//  Created by Andrew Dahlin on 10/15/14.
 //  Copyright (c) 2014 Pangomedia. All rights reserved.
 //
 
@@ -14,12 +14,12 @@
 @interface Location : NSManagedObject
 
 @property (nonatomic, retain) NSString * id;
-@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * latitude;
 @property (nonatomic, retain) NSString * longitude;
+@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * raw_region_id;
-@property (nonatomic, retain) NSSet *trails;
 @property (nonatomic, retain) Region *region;
+@property (nonatomic, retain) NSSet *trails;
 @end
 
 @interface Location (CoreDataGeneratedAccessors)

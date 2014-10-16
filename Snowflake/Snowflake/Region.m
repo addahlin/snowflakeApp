@@ -2,7 +2,7 @@
 //  Region.m
 //  Snowflake
 //
-//  Created by Andrew Dahlin on 10/11/14.
+//  Created by Andrew Dahlin on 10/15/14.
 //  Copyright (c) 2014 Pangomedia. All rights reserved.
 //
 
@@ -12,12 +12,12 @@
 
 @implementation Region
 
+@dynamic id;
 @dynamic name;
 @dynamic neLatitude;
 @dynamic neLongitude;
 @dynamic swLatitude;
 @dynamic swLongitude;
-@dynamic id;
 @dynamic locations;
 
 @end

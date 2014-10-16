@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "CoreData+MagicalRecord.h"
+#import "PNGReportManager.h"
+
 
 @interface AppDelegate ()
 
@@ -21,6 +23,12 @@
     
     //Setup MagicalRecord
     [MagicalRecord setupAutoMigratingCoreDataStack];
+    
+    //Fire off a sync request
+    PNGReportManager *rm = [[PNGReportManager alloc] init];
+    [rm syncAppData:^(NSError *error) {
+       NSLog(@"data synced from app delegate");
+    }];
     
     
     return YES;

@@ -2,7 +2,7 @@
 //  Location.m
 //  Snowflake
 //
-//  Created by Andrew Dahlin on 10/11/14.
+//  Created by Andrew Dahlin on 10/15/14.
 //  Copyright (c) 2014 Pangomedia. All rights reserved.
 //
 
@@ -14,11 +14,11 @@
 @implementation Location
 
 @dynamic id;
-@dynamic name;
 @dynamic latitude;
 @dynamic longitude;
+@dynamic name;
 @dynamic raw_region_id;
-@dynamic trails;
 @dynamic region;
+@dynamic trails;
 
 @end

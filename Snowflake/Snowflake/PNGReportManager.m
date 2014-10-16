@@ -25,7 +25,7 @@
 
 //The following return data immediately (most likely from Core Data)
 -(NSArray *) getRegions{
-    return [Region MR_findAll];
+    return [Region MR_findAllSortedBy:@"name" ascending:YES ];
 }
 
 -(NSArray *) getActivites{
@@ -33,7 +33,12 @@
 }
 
 -(NSArray *) getLocationsInRegion: (Region *) region{
-    return [Location MR_findByAttribute:@"region" withValue:region.id];
+    //Sort the locations by name
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    
+    return [[region.locations allObjects] sortedArrayUsingDescriptors:@[sortDescriptor]];
+    
+    //return [Location MR_findByAttribute:@"region" withValue:region.id];
 }
 
 -(NSArray *) getLocations {
@@ -42,6 +47,7 @@
 
 -(NSArray *) getReportsForRegion: (Region *) region{
     return nil;
+    
 }
 
 -(NSArray *) getReportsForLocation:(Location *) location{
@@ -175,6 +181,14 @@
         
         location.name = [locDict objectForKey:@"location_name"];
         location.raw_region_id = [locDict objectForKey:@"region"];
+        
+        //Map the location to it's region
+        Region *region = [Region MR_findFirstByAttribute:@"id" withValue:location.raw_region_id];
+        if (region){
+            location.region = region;
+        } else {
+            NSLog(@"Could not bind region id %@ for location %@", location.raw_region_id, location.name);
+        }
         
         NSString *lat = [locDict objectForKey:@"lat"];
         if (lat != (id)[NSNull null]){
