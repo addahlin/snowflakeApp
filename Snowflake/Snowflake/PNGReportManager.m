@@ -124,7 +124,9 @@
         } else {
             NSLog(@"Error retrieving Regions from server");
         }
-        completionBlock(error);
+        if (completionBlock) {
+            completionBlock(error);
+        }
         
     }];
 }
@@ -163,7 +165,9 @@
         } else {
             NSLog(@"Error retrieving Activities from server");
         }
-        completionBlock(error);
+        if (completionBlock){
+            completionBlock(error);
+        }
     }];
 }
 
@@ -216,7 +220,10 @@
         } else {
             NSLog(@"Error retrieving Locations from server");
         }
-        completionBlock(error);
+        
+        if (completionBlock){
+            completionBlock(error);
+        }
     }];
 }
 
@@ -257,7 +264,10 @@
         } else {
             NSLog(@"Error retrieving Reports from server");
         }
-        completionBlock(error);
+        
+        if (completionBlock) {
+            completionBlock(error);
+        }
     }];
 }
 

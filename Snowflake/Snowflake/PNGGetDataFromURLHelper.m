@@ -29,7 +29,9 @@
     
         //Call the completionBlock on the main thread
         dispatch_sync(dispatch_get_main_queue(), ^{
-            completionBlock(data, response, error);
+            if (completionBlock) {
+                completionBlock(data, response, error);
+            }
         });
 
     });
