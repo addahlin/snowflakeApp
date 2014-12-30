@@ -8,11 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		005D96ED19EF812600567322 /* PNGListRegionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005D96EC19EF812600567322 /* PNGListRegionsViewController.m */; };
+		007A68A11A42A21A00D06838 /* PNGSettingsMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A68A01A42A21A00D06838 /* PNGSettingsMenuViewController.m */; };
+		007A68A41A42A6EC00D06838 /* PNGReportDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A68A31A42A6EC00D06838 /* PNGReportDetailViewController.m */; };
+		00999C6B1A2C3D71004BF980 /* SimpleInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00999C6A1A2C3D71004BF980 /* SimpleInterface.storyboard */; };
+		00999C6E1A2D5C9B004BF980 /* PNGReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00999C6D1A2D5C9B004BF980 /* PNGReportListViewController.m */; };
+		00999C721A2D6074004BF980 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00999C711A2D6074004BF980 /* SWRevealViewController.m */; };
+		00999C751A2D647E004BF980 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00999C731A2D647E004BF980 /* reveal-icon.png */; };
+		00999C761A2D647E004BF980 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00999C741A2D647E004BF980 /* reveal-icon@2x.png */; };
 		00B5A04019E8F9D300757F29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A03F19E8F9D300757F29 /* main.m */; };
 		00B5A04319E8F9D300757F29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A04219E8F9D300757F29 /* AppDelegate.m */; };
 		00B5A04619E8F9D300757F29 /* Snowflake.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A04419E8F9D300757F29 /* Snowflake.xcdatamodeld */; };
 		00B5A04919E8F9D300757F29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A04819E8F9D300757F29 /* ViewController.m */; };
-		00B5A04C19E8F9D300757F29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A04A19E8F9D300757F29 /* Main.storyboard */; };
+		00B5A04C19E8F9D300757F29 /* Main-previous.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A04A19E8F9D300757F29 /* Main-previous.storyboard */; };
 		00B5A04E19E8F9D300757F29 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A04D19E8F9D300757F29 /* Images.xcassets */; };
 		00B5A05119E8F9D300757F29 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A04F19E8F9D300757F29 /* LaunchScreen.xib */; };
 		00B5A05D19E8F9D300757F29 /* SnowflakeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A05C19E8F9D300757F29 /* SnowflakeTests.m */; };
@@ -50,6 +57,7 @@
 		00B5A10019E9BCDB00757F29 /* PNGSnowIOCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A0FF19E9BCDB00757F29 /* PNGSnowIOCommunicator.m */; };
 		00B5A10419E9BFE400757F29 /* PNGGetDataFromURLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10319E9BFE400757F29 /* PNGGetDataFromURLHelper.m */; };
 		00B5A10719E9FEBB00757F29 /* PNGReportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10619E9FEBB00757F29 /* PNGReportManager.m */; };
+		00E89C891A11BB7200AF6C00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E89C881A11BB7200AF6C00 /* Main.storyboard */; };
 		00F8189E19EF8B9B004F433B /* PNGListLocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F8189D19EF8B9B004F433B /* PNGListLocationsViewController.m */; };
 		00F818A119EF9321004F433B /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F818A019EF9321004F433B /* Region.m */; };
 		00F818A419EF9321004F433B /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F818A319EF9321004F433B /* Report.m */; };
@@ -70,6 +78,17 @@
 /* Begin PBXFileReference section */
 		005D96EB19EF812600567322 /* PNGListRegionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGListRegionsViewController.h; sourceTree = "<group>"; };
 		005D96EC19EF812600567322 /* PNGListRegionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGListRegionsViewController.m; sourceTree = "<group>"; };
+		007A689F1A42A21A00D06838 /* PNGSettingsMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGSettingsMenuViewController.h; sourceTree = "<group>"; };
+		007A68A01A42A21A00D06838 /* PNGSettingsMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGSettingsMenuViewController.m; sourceTree = "<group>"; };
+		007A68A21A42A6EC00D06838 /* PNGReportDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGReportDetailViewController.h; sourceTree = "<group>"; };
+		007A68A31A42A6EC00D06838 /* PNGReportDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGReportDetailViewController.m; sourceTree = "<group>"; };
+		00999C6A1A2C3D71004BF980 /* SimpleInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SimpleInterface.storyboard; path = ../SimpleInterface.storyboard; sourceTree = "<group>"; };
+		00999C6C1A2D5C9B004BF980 /* PNGReportListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGReportListViewController.h; sourceTree = "<group>"; };
+		00999C6D1A2D5C9B004BF980 /* PNGReportListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGReportListViewController.m; sourceTree = "<group>"; };
+		00999C701A2D6074004BF980 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		00999C711A2D6074004BF980 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		00999C731A2D647E004BF980 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
+		00999C741A2D647E004BF980 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
 		00B5A03A19E8F9D300757F29 /* Snowflake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snowflake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B5A03E19E8F9D300757F29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00B5A03F19E8F9D300757F29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -78,7 +97,7 @@
 		00B5A04519E8F9D300757F29 /* Snowflake.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Snowflake.xcdatamodel; sourceTree = "<group>"; };
 		00B5A04719E8F9D300757F29 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		00B5A04819E8F9D300757F29 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		00B5A04B19E8F9D300757F29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		00B5A04B19E8F9D300757F29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Main-previous.storyboard"; sourceTree = "<group>"; };
 		00B5A04D19E8F9D300757F29 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		00B5A05019E8F9D300757F29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		00B5A05619E8F9D300757F29 /* SnowflakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnowflakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +176,7 @@
 		00B5A10319E9BFE400757F29 /* PNGGetDataFromURLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGGetDataFromURLHelper.m; sourceTree = "<group>"; };
 		00B5A10519E9FEBB00757F29 /* PNGReportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGReportManager.h; sourceTree = "<group>"; };
 		00B5A10619E9FEBB00757F29 /* PNGReportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGReportManager.m; sourceTree = "<group>"; };
+		00E89C881A11BB7200AF6C00 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		00F8189C19EF8B9B004F433B /* PNGListLocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGListLocationsViewController.h; sourceTree = "<group>"; };
 		00F8189D19EF8B9B004F433B /* PNGListLocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGListLocationsViewController.m; sourceTree = "<group>"; };
 		00F8189F19EF9321004F433B /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Region.h; sourceTree = "<group>"; };
@@ -194,8 +214,24 @@
 				005D96EC19EF812600567322 /* PNGListRegionsViewController.m */,
 				00F8189C19EF8B9B004F433B /* PNGListLocationsViewController.h */,
 				00F8189D19EF8B9B004F433B /* PNGListLocationsViewController.m */,
+				00999C6C1A2D5C9B004BF980 /* PNGReportListViewController.h */,
+				00999C6D1A2D5C9B004BF980 /* PNGReportListViewController.m */,
+				007A689F1A42A21A00D06838 /* PNGSettingsMenuViewController.h */,
+				007A68A01A42A21A00D06838 /* PNGSettingsMenuViewController.m */,
+				007A68A21A42A6EC00D06838 /* PNGReportDetailViewController.h */,
+				007A68A31A42A6EC00D06838 /* PNGReportDetailViewController.m */,
 			);
 			name = controllers;
+			sourceTree = "<group>";
+		};
+		00999C6F1A2D5F42004BF980 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				00999C701A2D6074004BF980 /* SWRevealViewController.h */,
+				00999C711A2D6074004BF980 /* SWRevealViewController.m */,
+				00B5A06719E8FC9400757F29 /* MagicalRecord */,
+			);
+			name = "Third Party";
 			sourceTree = "<group>";
 		};
 		00B5A03119E8F9D300757F29 = {
@@ -220,15 +256,18 @@
 		00B5A03C19E8F9D300757F29 /* Snowflake */ = {
 			isa = PBXGroup;
 			children = (
+				00999C6F1A2D5F42004BF980 /* Third Party */,
+				00E89C8A1A11BBA100AF6C00 /* Icons */,
 				005D96EA19EF810500567322 /* controllers */,
 				00B5A10119E9BFB800757F29 /* Helpers */,
 				00B5A0C019E900FD00757F29 /* Entities */,
-				00B5A06719E8FC9400757F29 /* MagicalRecord */,
 				00B5A04119E8F9D300757F29 /* AppDelegate.h */,
 				00B5A04219E8F9D300757F29 /* AppDelegate.m */,
 				00B5A04719E8F9D300757F29 /* ViewController.h */,
 				00B5A04819E8F9D300757F29 /* ViewController.m */,
-				00B5A04A19E8F9D300757F29 /* Main.storyboard */,
+				00B5A04A19E8F9D300757F29 /* Main-previous.storyboard */,
+				00E89C881A11BB7200AF6C00 /* Main.storyboard */,
+				00999C6A1A2C3D71004BF980 /* SimpleInterface.storyboard */,
 				00B5A04D19E8F9D300757F29 /* Images.xcassets */,
 				00B5A04F19E8F9D300757F29 /* LaunchScreen.xib */,
 				00B5A04419E8F9D300757F29 /* Snowflake.xcdatamodeld */,
@@ -412,6 +451,15 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		00E89C8A1A11BBA100AF6C00 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				00999C731A2D647E004BF980 /* reveal-icon.png */,
+				00999C741A2D647E004BF980 /* reveal-icon@2x.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -492,9 +540,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00B5A04C19E8F9D300757F29 /* Main.storyboard in Resources */,
+				00B5A04C19E8F9D300757F29 /* Main-previous.storyboard in Resources */,
 				00B5A05119E8F9D300757F29 /* LaunchScreen.xib in Resources */,
+				00999C761A2D647E004BF980 /* reveal-icon@2x.png in Resources */,
+				00999C6B1A2C3D71004BF980 /* SimpleInterface.storyboard in Resources */,
 				00B5A04E19E8F9D300757F29 /* Images.xcassets in Resources */,
+				00E89C891A11BB7200AF6C00 /* Main.storyboard in Resources */,
+				00999C751A2D647E004BF980 /* reveal-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +567,7 @@
 				00B5A0AF19E8FC9400757F29 /* NSManagedObject+MagicalRecord.m in Sources */,
 				00B5A0BE19E8FC9400757F29 /* MagicalRecord.m in Sources */,
 				00B5A0A619E8FC9400757F29 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
+				00999C721A2D6074004BF980 /* SWRevealViewController.m in Sources */,
 				00B5A0B019E8FC9400757F29 /* NSManagedObject+MagicalRequests.m in Sources */,
 				00B5A0AA19E8FC9400757F29 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				00B5A0A519E8FC9400757F29 /* MagicalImportFunctions.m in Sources */,
@@ -525,11 +578,13 @@
 				00B5A0A719E8FC9400757F29 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				00B5A04319E8F9D300757F29 /* AppDelegate.m in Sources */,
 				005D96ED19EF812600567322 /* PNGListRegionsViewController.m in Sources */,
+				007A68A11A42A21A00D06838 /* PNGSettingsMenuViewController.m in Sources */,
 				00B5A0B719E8FC9400757F29 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				00B5A0B519E8FC9400757F29 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				00F818A419EF9321004F433B /* Report.m in Sources */,
 				00B5A0FD19E9B72A00757F29 /* PNGSettings.m in Sources */,
 				00F818A119EF9321004F433B /* Region.m in Sources */,
+				00999C6E1A2D5C9B004BF980 /* PNGReportListViewController.m in Sources */,
 				00F818A719EF9321004F433B /* Activity.m in Sources */,
 				00B5A10419E9BFE400757F29 /* PNGGetDataFromURLHelper.m in Sources */,
 				00F8189E19EF8B9B004F433B /* PNGListLocationsViewController.m in Sources */,
@@ -554,6 +609,7 @@
 				00B5A0EE19E9066F00757F29 /* Location+user.m in Sources */,
 				00B5A0B219E8FC9400757F29 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				00B5A0A819E8FC9400757F29 /* NSNumber+MagicalDataImport.m in Sources */,
+				007A68A41A42A6EC00D06838 /* PNGReportDetailViewController.m in Sources */,
 				00B5A0AD19E8FC9400757F29 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				00B5A10019E9BCDB00757F29 /* PNGSnowIOCommunicator.m in Sources */,
 			);
@@ -578,12 +634,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		00B5A04A19E8F9D300757F29 /* Main.storyboard */ = {
+		00B5A04A19E8F9D300757F29 /* Main-previous.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				00B5A04B19E8F9D300757F29 /* Base */,
 			);
-			name = Main.storyboard;
+			name = "Main-previous.storyboard";
 			sourceTree = "<group>";
 		};
 		00B5A04F19E8F9D300757F29 /* LaunchScreen.xib */ = {

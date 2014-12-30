@@ -7,6 +7,7 @@
 //
 
 #import "PNGReportManager.h"
+#import "PNGReportDetailViewController.h"
 
 @implementation PNGReportManager
 
@@ -14,7 +15,7 @@
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
         
         //Check to see if there was an error. Success is coming back as "NO" even thought it appears to have persisted/saved without
-        // any problems.
+        // any problemls.
         if (!error){
             NSLog(@"Successfully saved contex");
         } else{
@@ -96,7 +97,7 @@
     //NSLog(@"JSON data: %@", parsedObject);
     
     for (NSString *regionId in [parsedObject keyEnumerator]){
-        NSLog(@"processing trail: %@", regionId);
+        //NSLog(@"processing trail: %@", regionId);
         
         //Get the region if it already exists, otherwise, create one.
         Region *region = [Region MR_findFirstOrCreateByAttribute:@"id" withValue:regionId];
@@ -176,11 +177,11 @@
     NSError *error;
     
     NSArray *parsedObject = [NSJSONSerialization JSONObjectWithData:json options:0 error:&error];
-    NSLog(@"JSON data: %@", parsedObject);
+    //NSLog(@"JSON data: %@", parsedObject);
     
     for (NSDictionary *locDict in parsedObject) {
         NSString *locId = [locDict objectForKey:@"location_id"];
-        NSLog(@"Processing for trail id: %@", locId);
+        //NSLog(@"Processing for trail id: %@", locId);
         Location *location = [Location MR_findFirstOrCreateByAttribute:@"id" withValue:locId];
         
         location.name = [locDict objectForKey:@"location_name"];
@@ -233,7 +234,7 @@
     NSError *error;
     
     NSArray *parsedObject = [NSJSONSerialization JSONObjectWithData:json options:0 error:&error];
-    NSLog(@"JSON data: %@", parsedObject);
+    //NSLog(@"JSON data: %@", parsedObject);
     
     for (NSDictionary *reportDict in parsedObject) {
         NSString *reportId = [reportDict objectForKey:@"report_id"];
@@ -249,7 +250,12 @@
         report.latitude = [reportDict objectForKey:@"lng"];
         //todo: activities?
         //todo: add report_time
+        
+        //todo: resolve trail via raw_trail_id
+        
     }
+    NSLog(@"Found %lul reports", [parsedObject count]);
+
     
     [self saveContext];
 }
