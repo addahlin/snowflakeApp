@@ -246,6 +246,7 @@
         report.raw_trail_name = [reportDict objectForKey:@"trail_name"];
         report.poster_name = [reportDict objectForKey:@"name"];
         //report.posted_date = [reportDict objectForKey:@"posted]; //TODO: format
+        
         report.latitude = [reportDict objectForKey:@"lat"];
         report.latitude = [reportDict objectForKey:@"lng"];
         //todo: activities?
