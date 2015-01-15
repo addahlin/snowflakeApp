@@ -13,7 +13,7 @@
 
 
 // Used to fix up the incoming report text. Should put this somewhere more appropriate.
-- (NSString *) stringByReplacingISO8859Codes: (NSString * ) dataString
+- (NSString *) stringByUnescapingCodes: (NSString * ) dataString
 {
     
     NSUInteger myLength = [dataString length];
@@ -181,7 +181,7 @@ finish:
         NSDictionary *data = (NSDictionary *)[parsedObject objectForKey:regionId];
         
         region.id = regionId;
-        region.name = [data objectForKey:@"name"];
+        region.name = [self stringByUnescapingCodes:[data objectForKey:@"name"]];
         region.neLatitude = [data objectForKey:@"neLat"];
         region.neLongitude = [data objectForKey:@"neLng"];
         region.swLatitude = [data objectForKey:@"swLat"];
@@ -260,7 +260,7 @@ finish:
         //NSLog(@"Processing for trail id: %@", locId);
         Location *location = [Location MR_findFirstOrCreateByAttribute:@"id" withValue:locId];
         
-        location.name = [locDict objectForKey:@"location_name"];
+        location.name = [self stringByUnescapingCodes:[locDict objectForKey:@"location_name"]];
         location.raw_region_id = [locDict objectForKey:@"region"];
         
         //Map the location to it's region
@@ -320,10 +320,10 @@ finish:
         report.report_id = reportId;
         
         report.raw_trail_id = [reportDict objectForKey:@"trail_id"];
-        report.text = [self stringByReplacingISO8859Codes:[reportDict objectForKey:@"report"]];  //TODO: clean up this text
+        report.text = [self stringByUnescapingCodes:[reportDict objectForKey:@"report"]];  //TODO: clean up this text
         report.raw_region_id = [reportDict objectForKey:@"region"];
-        report.raw_trail_name = [reportDict objectForKey:@"trail_name"];
-        report.poster_name = [reportDict objectForKey:@"name"];
+        report.raw_trail_name = [self stringByUnescapingCodes:[reportDict objectForKey:@"trail_name"]];
+        report.poster_name = [self stringByUnescapingCodes:[reportDict objectForKey:@"name"]];
         //report.posted_date = [reportDict objectForKey:@"posted]; //TODO: format
         
         //Make sure the lattitude isn't null. If it isn't, assign it.
