@@ -16,6 +16,8 @@
 
 @interface PNGReportManager : NSObject
 
+- (NSString *) stringByReplacingISO8859Codes: (NSString * ) dataString;
+
 //The following return data immediately (most likely from Core Data)
 +(NSArray *) getRegions;
 

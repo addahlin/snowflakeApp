@@ -127,9 +127,17 @@
     //Get the report to display
     Report *report = [self.reports objectAtIndex:indexPath.row];
     
-    //locationLabel.text = report.trail.name;
-    locationLabel.text = report.raw_trail_name;
-    reportDateLabel.text = @"Wed Jun 26th 6:00PM";
+    // If we know the trial this is for, use that name. Otherwise use whatever they submitted
+    if (report.trail) {
+        locationLabel.text = report.trail.name;
+    } else {
+        locationLabel.text = report.raw_trail_name;
+    }
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    
+    reportDateLabel.text = [formatter stringFromDate:report.report_date];
     descLabel.text = report.text;
     
     return cell;
