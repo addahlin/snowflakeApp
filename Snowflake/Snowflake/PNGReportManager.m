@@ -196,6 +196,7 @@
             NSLog(@"Could not bind region id %@ for location %@", location.raw_region_id, location.name);
         }
         
+        //Make sure the lattitude isn't null. If it isn't, assign it.
         NSString *lat = [locDict objectForKey:@"lat"];
         if (lat != (id)[NSNull null]){
             location.latitude = lat;
@@ -241,6 +242,8 @@
         NSString *reportId = [reportDict objectForKey:@"report_id"];
         Report *report = [Report MR_findFirstOrCreateByAttribute:@"id" withValue:reportId];
         
+        report.report_id = reportId;
+        
         report.raw_trail_id = [reportDict objectForKey:@"trail_id"];
         report.text = [reportDict objectForKey:@"report"];  //TODO: clean up this text
         report.raw_region_id = [reportDict objectForKey:@"region"];
@@ -248,12 +251,57 @@
         report.poster_name = [reportDict objectForKey:@"name"];
         //report.posted_date = [reportDict objectForKey:@"posted]; //TODO: format
         
-        report.latitude = [reportDict objectForKey:@"lat"];
-        report.latitude = [reportDict objectForKey:@"lng"];
-        //todo: activities?
-        //todo: add report_time
+        //Make sure the lattitude isn't null. If it isn't, assign it.
+        NSString *lat = [reportDict objectForKey:@"lat"];
+        if (lat != (id)[NSNull null]){
+            report.latitude = lat;
+        }
+
+        //Make sure the lng isn't null. If it isn't, assign it.
+        NSString *lng = [reportDict objectForKey:@"lng"];
+        if (lng != (id)[NSNull null]){
+            report.longitude = lat;
+        }
         
-        //todo: resolve trail via raw_trail_id
+        //Deal with the dates (convert from time stamp/text)
+        //Report Time (string) -- This is the time the report is for, not when it was submitted
+        NSString *reportDateStr = [reportDict objectForKey:@"report_time"];
+        
+        //TODO: Need to test this with all months
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"MMM dd,yyyy"];
+        [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+        
+        NSDate *reportDate = [dateFormatter dateFromString: reportDateStr];
+        //NSLog(@"Converted raw report time from %@ -> %@", reportDateStr, [reportDate description]);
+        
+        report.raw_report_time = reportDateStr;
+        report.report_date = reportDate;
+        
+        //Posted Time (timestamp) -- When the report was actually posted to the site
+        NSString *postedTimestamp = [reportDict objectForKey:@"posted"];
+        report.posted_date = [NSDate dateWithTimeIntervalSince1970:[postedTimestamp doubleValue]];
+        report.raw_posted_timestamp = postedTimestamp;
+        
+        //todo: activities?
+
+        // Link up the foreign keys
+        
+        //Map the report to it's region
+        // Note: The region can't always be found via it's location because it's possible the report doesn't belong to a known location
+        Region *region = [Region MR_findFirstByAttribute:@"id" withValue:report.raw_region_id];
+        if (region){
+            report.region = region;
+        } else {
+            NSLog(@"Could not bind region id %@ for report", report.raw_region_id);
+        }
+        
+        Location *location = [Location MR_findFirstByAttribute:@"id" withValue:report.raw_trail_id];
+        if (location){
+            report.location = location;
+        } else {
+            NSLog(@"Could not bind location id %@ for report", report.raw_trail_id);
+        }
         
     }
     NSLog(@"Found %lul reports", (unsigned long)[parsedObject count]);

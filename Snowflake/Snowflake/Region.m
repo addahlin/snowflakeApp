@@ -2,12 +2,13 @@
 //  Region.m
 //  Snowflake
 //
-//  Created by Andrew Dahlin on 10/15/14.
-//  Copyright (c) 2014 Pangomedia. All rights reserved.
+//  Created by Andrew Dahlin on 1/15/15.
+//  Copyright (c) 2015 Pangomedia. All rights reserved.
 //
 
 #import "Region.h"
 #import "Location.h"
+#import "Report.h"
 
 
 @implementation Region
@@ -19,5 +20,6 @@
 @dynamic swLatitude;
 @dynamic swLongitude;
 @dynamic locations;
+@dynamic reports;
 
 @end

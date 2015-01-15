@@ -2,8 +2,8 @@
 //  Location.h
 //  Snowflake
 //
-//  Created by Andrew Dahlin on 10/15/14.
-//  Copyright (c) 2014 Pangomedia. All rights reserved.
+//  Created by Andrew Dahlin on 1/15/15.
+//  Copyright (c) 2015 Pangomedia. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -20,6 +20,7 @@
 @property (nonatomic, retain) NSString * raw_region_id;
 @property (nonatomic, retain) Region *region;
 @property (nonatomic, retain) NSSet *trails;
+@property (nonatomic, retain) Report *reports;
 @end
 
 @interface Location (CoreDataGeneratedAccessors)
