@@ -52,15 +52,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    PNGReportManager *rm = [[PNGReportManager alloc] init];
     
     //If we have a region set, only get locations from that region.
     // Otherwise load all the regions
     if (self.region){
-        self.locations = [rm getLocationsInRegion:self.region];
+        self.locations = [PNGReportManager getLocationsInRegion:self.region];
         
     } else {
-        self.locations = [rm getLocations];
+        self.locations = [PNGReportManager getLocations];
     }
     
     

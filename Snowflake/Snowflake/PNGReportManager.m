@@ -25,15 +25,16 @@
 }
 
 //The following return data immediately (most likely from Core Data)
--(NSArray *) getRegions{
+
++(NSArray *) getRegions{
     return [Region MR_findAllSortedBy:@"name" ascending:YES ];
 }
 
--(NSArray *) getActivites{
++(NSArray *) getActivites{
     return [Activity MR_findAll];
 }
 
--(NSArray *) getLocationsInRegion: (Region *) region{
++(NSArray *) getLocationsInRegion: (Region *) region{
     //Sort the locations by name
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     
@@ -42,20 +43,20 @@
     //return [Location MR_findByAttribute:@"region" withValue:region.id];
 }
 
--(NSArray *) getLocations {
++(NSArray *) getLocations {
     return [Location MR_findAll];
 }
 
--(NSArray *) getReportsForRegion: (Region *) region{
++(NSArray *) getReportsForRegion: (Region *) region{
     return nil;
     
 }
 
--(NSArray *) getReportsForLocation:(Location *) location{
++(NSArray *) getReportsForLocation:(Location *) location{
     return nil;
 }
 
--(NSArray *) getAllReports{
++(NSArray *) getAllReports{
     return [Report MR_findAll];
 }
 
@@ -255,7 +256,7 @@
         //todo: resolve trail via raw_trail_id
         
     }
-    NSLog(@"Found %lul reports", [parsedObject count]);
+    NSLog(@"Found %lul reports", (unsigned long)[parsedObject count]);
 
     
     [self saveContext];

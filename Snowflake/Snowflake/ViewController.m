@@ -29,7 +29,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     //TEMPORARY: just for testing before we have a real infrastructure setup
-    PNGSnowIOCommunicator *serverComm = [[PNGSnowIOCommunicator alloc] init];
+    //PNGSnowIOCommunicator *serverComm = [[PNGSnowIOCommunicator alloc] init];
     
     /*
     //Get activities from the server
@@ -73,14 +73,13 @@
     
 }
 - (IBAction)refreshUI:(id)sender {
-    PNGReportManager *reportManager = [[PNGReportManager alloc] init];
-    self.regionCountTextView.text = [NSString stringWithFormat:@"%lu", (unsigned long)[[reportManager getRegions] count]];
+    self.regionCountTextView.text = [NSString stringWithFormat:@"%lu", (unsigned long)[[PNGReportManager getRegions] count]];
     
-    self.activitiesCountTextView.text = [NSString stringWithFormat:@"%lu", (unsigned long)[[reportManager getActivites] count]];
+    self.activitiesCountTextView.text = [NSString stringWithFormat:@"%lu", (unsigned long)[[PNGReportManager getActivites] count]];
     
-    self.locationCountTextView.text = [NSString stringWithFormat:@"%lu", (unsigned long)[[reportManager getLocations] count]];
+    self.locationCountTextView.text = [NSString stringWithFormat:@"%lu", (unsigned long)[[PNGReportManager getLocations] count]];
     
-    self.reportCountTextView.text = [NSString stringWithFormat:@"%lu", (unsigned long)[[reportManager getAllReports] count]];
+    self.reportCountTextView.text = [NSString stringWithFormat:@"%lu", (unsigned long)[[PNGReportManager getAllReports] count]];
 }
 
 - (void)didReceiveMemoryWarning {

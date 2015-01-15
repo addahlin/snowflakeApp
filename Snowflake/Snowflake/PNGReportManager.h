@@ -17,19 +17,19 @@
 @interface PNGReportManager : NSObject
 
 //The following return data immediately (most likely from Core Data)
--(NSArray *) getRegions;
++(NSArray *) getRegions;
 
--(NSArray *) getActivites;
++(NSArray *) getActivites;
 
--(NSArray *) getLocationsInRegion: (Region *) region;
++(NSArray *) getLocationsInRegion: (Region *) region;
 
--(NSArray *) getLocations;
++(NSArray *) getLocations;
 
--(NSArray *) getReportsForRegion: (Region *) region;
++(NSArray *) getReportsForRegion: (Region *) region;
 
--(NSArray *) getReportsForLocation:(Location *) location;
++(NSArray *) getReportsForLocation:(Location *) location;
 
--(NSArray *) getAllReports;
++(NSArray *) getAllReports;
 
 // Functions to sync the app with the server. This is done asynchronously.
  

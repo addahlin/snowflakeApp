@@ -20,9 +20,8 @@
 @implementation PNGReportListViewController 
 {
     NSArray *myMenuItems;
-    
-
 }
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
@@ -67,11 +66,11 @@
     PNGReportManager *reportManager = [[PNGReportManager alloc] init];
     
     //Get all the cached report
-    self.reports = [reportManager getAllReports];
+    self.reports = [PNGReportManager getAllReports];
     
     //Send an update request to the server to get the newest reports.
     [reportManager syncAllReports:^(NSError *error) {
-        self.reports = [reportManager getAllReports];
+        self.reports = [PNGReportManager getAllReports];
         [self.tableView reloadData];
     }];
     
