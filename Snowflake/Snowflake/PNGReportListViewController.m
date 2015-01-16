@@ -7,6 +7,7 @@
 //
 
 #import "PNGReportListViewController.h"
+#import "PNGReportDetailViewController.h"
 #import "SWRevealViewController.h"
 #import "Region+user.h"
 #import "Report+user.h"
@@ -151,9 +152,8 @@
      // If they selected a specific safety minute, let the PNGSafetyMinuteDetailViewController know which one
      if ([[segue identifier] isEqualToString:@"showReportDetailFromList"]) {
          NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-         //PNGSafetyMinuteDetailViewController *destViewController = segue.destinationViewController;
-         //destViewController.safetyMinute = [self.minutesForCategory objectAtIndex:indexPath.row];
-         //destViewController.fromCategoryId = [self.category id];
+         PNGReportDetailViewController *destViewController = segue.destinationViewController;
+         destViewController.report = [self.reports objectAtIndex:indexPath.row];
      }
 
 }

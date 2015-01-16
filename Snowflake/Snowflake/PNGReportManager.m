@@ -61,7 +61,7 @@
                 gotNumber = [scanner scanInt:(int*)&charCode];
             }
             if (gotNumber) {
-                [result appendFormat:@"%C", charCode];
+                [result appendFormat:@"%C", (unichar)charCode];
             }
             else {
                 NSString *unknownEntity = @"";
@@ -90,7 +90,7 @@ finish:
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
         
         //Check to see if there was an error. Success is coming back as "NO" even thought it appears to have persisted/saved without
-        // any problemls.
+        // any problems.
         if (!error){
             NSLog(@"Successfully saved contex");
         } else{
