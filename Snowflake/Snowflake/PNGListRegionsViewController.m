@@ -90,9 +90,9 @@
 
 - (void) updateRegions{
     
-    PNGReportManager *rm = [[PNGReportManager alloc] init];
+    //PNGReportManager *rm = [[PNGReportManager alloc] init];
     
-    [rm syncRegions:^(NSError *error) {
+    [PNGReportManager syncRegions:^(NSError *error) {
         
         //TODO: Handle errors
         

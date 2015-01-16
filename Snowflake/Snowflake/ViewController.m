@@ -56,10 +56,10 @@
         NSLog(@"Got response for reports: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
     } ];
     */
-    PNGReportManager *reportManager = [[PNGReportManager alloc] init];
+    //PNGReportManager *reportManager = [[PNGReportManager alloc] init];
     
-    [reportManager syncAppData:^(NSError *error) {
-        [reportManager syncAllReports:^(NSError *error) {
+    [PNGReportManager syncAppData:^(NSError *error) {
+        [PNGReportManager syncAllReports:^(NSError *error) {
             
         }];
 

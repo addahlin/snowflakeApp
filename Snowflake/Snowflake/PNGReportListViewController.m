@@ -64,13 +64,13 @@
 
 - (void) loadRecentReports {
     //Better as Singleton
-    PNGReportManager *reportManager = [[PNGReportManager alloc] init];
+    //PNGReportManager *reportManager = [[PNGReportManager alloc] init];
     
     //Get all the cached report
     self.reports = [PNGReportManager getAllReports];
     
     //Send an update request to the server to get the newest reports.
-    [reportManager syncAllReports:^(NSError *error) {
+    [PNGReportManager syncAllReports:^(NSError *error) {
         self.reports = [PNGReportManager getAllReports];
         [self.tableView reloadData];
     }];

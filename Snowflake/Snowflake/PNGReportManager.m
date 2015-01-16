@@ -13,7 +13,7 @@
 
 
 // Used to fix up the incoming report text. Should put this somewhere more appropriate.
-- (NSString *) stringByUnescapingCodes: (NSString * ) dataString
++ (NSString *) stringByUnescapingCodes: (NSString * ) dataString
 {
     
     NSUInteger myLength = [dataString length];
@@ -86,7 +86,7 @@ finish:
 }
 
 
--(void) saveContext{
++(void) saveContext{
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
         
         //Check to see if there was an error. Success is coming back as "NO" even thought it appears to have persisted/saved without
@@ -137,11 +137,11 @@ finish:
 
 // Functions to sync the app with the server. This is done asynchronously.
 // Rather than provide callbacks, these will trigger NSNotification events interested parties can listen to
--(void) syncAll{
++(void) syncAll{
     
 }
 
--(void) syncAppData:(void (^)(NSError* error))completionBlock{
++(void) syncAppData:(void (^)(NSError* error))completionBlock{
     
     [self syncRegions:^(NSError *error) {
         if(!error){
@@ -166,7 +166,7 @@ finish:
 
 
 //TODO: put somewhere more appropriate
--(void) buildRegionsFromJSON:(NSData *) json{
++(void) buildRegionsFromJSON:(NSData *) json{
     NSError *error;
     
     NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:json options:0 error:&error];
@@ -188,10 +188,10 @@ finish:
         region.swLongitude = [data objectForKey:@"swLng"];
     }
     
-    [self saveContext];
+    [[self class] saveContext];
     
 }
--(void) syncRegions:(void (^)(NSError* error))completionBlock{
++(void) syncRegions:(void (^)(NSError* error))completionBlock{
     //TODO: I really need to turn this into a class member or singleton.
     PNGSnowIOCommunicator *comm = [[PNGSnowIOCommunicator alloc] init];
     [comm getRegionsJSONwithCompletionBlock:^(NSData *data, NSHTTPURLResponse *response, NSError *error) {
@@ -210,7 +210,7 @@ finish:
 
 
 //TODO: put somewhere more appropriate
--(void) buildActivitiesFromJSON:(NSData *) json{
++(void) buildActivitiesFromJSON:(NSData *) json{
     NSError *error;
     
     NSArray *parsedObject = [NSJSONSerialization JSONObjectWithData:json options:0 error:&error];
@@ -226,11 +226,11 @@ finish:
         
     }
     
-    [self saveContext];
+    [[self class] saveContext];
     
     
 }
--(void) syncActivities:(void (^)(NSError* error))completionBlock{
++(void) syncActivities:(void (^)(NSError* error))completionBlock{
     
     //Get the Activities JSON from the server (async)
     //TODO: I really need to turn this into a class member or singleton.
@@ -249,7 +249,7 @@ finish:
 }
 
 //TODO: put somewhere more appropriate
--(void) buildLocationsFromJSON:(NSData *) json{
++(void) buildLocationsFromJSON:(NSData *) json{
     NSError *error;
     
     NSArray *parsedObject = [NSJSONSerialization JSONObjectWithData:json options:0 error:&error];
@@ -284,11 +284,11 @@ finish:
         
     }
     
-    [self saveContext];
+    [[self class] saveContext];
     
 }
 
--(void) syncLocations:(void (^)(NSError* error))completionBlock{
++(void) syncLocations:(void (^)(NSError* error))completionBlock{
     //TODO: I really need to turn this into a class member or singleton.
     PNGSnowIOCommunicator *comm = [[PNGSnowIOCommunicator alloc] init];
     [comm getLocationsJSONwithCompletionBlock:^(NSData *data, NSHTTPURLResponse *response, NSError *error) {
@@ -307,7 +307,7 @@ finish:
 
 
 //TODO: put somewhere more appropriate
--(void) buildReportsFromJSON:(NSData *) json{
++(void) buildReportsFromJSON:(NSData *) json{
     NSError *error;
     
     NSArray *parsedObject = [NSJSONSerialization JSONObjectWithData:json options:0 error:&error];
@@ -382,10 +382,10 @@ finish:
     NSLog(@"Found %lul reports", (unsigned long)[parsedObject count]);
 
     
-    [self saveContext];
+    [[self class] saveContext];
 }
 
--(void) syncAllReports:(void (^)(NSError* error))completionBlock{
++(void) syncAllReports:(void (^)(NSError* error))completionBlock{
     //TODO: I really need to turn this into a class member or singleton.
     PNGSnowIOCommunicator *comm = [[PNGSnowIOCommunicator alloc] init];
     [comm getMostRecentReportsWithOptions:nil completionBlock:^(NSData *data, NSHTTPURLResponse *response, NSError *error) {
@@ -402,19 +402,19 @@ finish:
     }];
 }
 
--(void) syncReportsForLocation:(Location *) location{
++(void) syncReportsForLocation:(Location *) location{
     
 }
 
--(void) syncReportsForRegion: (Region *) region{
++(void) syncReportsForRegion: (Region *) region{
     
 }
 
--(void) syncReportsSinceDate: (NSDate *) date{
++(void) syncReportsSinceDate: (NSDate *) date{
     
 }
 
--(void) trimOldReports{
++(void) trimOldReports{
     
 }
 
