@@ -11,6 +11,7 @@
 
 @implementation PNGReportManager
 
+NSString * const PNGReportsDidUpdateNotification = @"PNGReportsDidUpdateNotification";
 
 // Used to fix up the incoming report text. Should put this somewhere more appropriate.
 + (NSString *) stringByUnescapingCodes: (NSString * ) dataString
@@ -399,6 +400,12 @@ finish:
         if (completionBlock) {
             completionBlock(error);
         }
+        
+        //Fire off a notification that the reports were updated
+        //
+        NSDictionary *userInfo = nil;//@{@"someKey": someValue};
+        [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsDidUpdateNotification object:self userInfo:userInfo];
+        
     }];
 }
 

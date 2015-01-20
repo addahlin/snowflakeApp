@@ -16,7 +16,9 @@
 
 @interface PNGReportManager : NSObject
 
-- (NSString *) stringByUnescapingCodes: (NSString * ) dataString;
+extern NSString * const PNGReportsDidUpdateNotification;
+
++ (NSString *) stringByUnescapingCodes: (NSString * ) dataString;
 
 //The following return data immediately (most likely from Core Data)
 +(NSArray *) getRegions;

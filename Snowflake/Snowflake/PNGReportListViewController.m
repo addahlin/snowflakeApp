@@ -20,7 +20,6 @@
 
 @implementation PNGReportListViewController 
 {
-    NSArray *myMenuItems;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -31,8 +30,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    myMenuItems = [NSArray arrayWithObjects:@"object 1", @"object 2", @"Object 3", nil];
     
     // Do any additional setup after loading the view.
     SWRevealViewController *revealController = [self revealViewController];
@@ -58,19 +55,34 @@
                   forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
 
-    
+    //Listen for reports
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reportsUpdated:)
+                                                 name:PNGReportsDidUpdateNotification object:nil];
     
 }
 
-- (void) loadRecentReports {
-    //Better as Singleton
-    //PNGReportManager *reportManager = [[PNGReportManager alloc] init];
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
     
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:PNGReportsDidUpdateNotification object:nil];
+    
+}
+
+//Called by PNGReport manager when reports have been updated from the server
+-(void)reportsUpdated:(NSNotification *) notification {
+    NSLog(@"*****Reports updated Notification Received!*****");
+}
+
+- (void) loadRecentReports {
     //Get all the cached report
     self.reports = [PNGReportManager getAllReports];
-    
+    //TODO: show a spinner so they know it's updating
     //Send an update request to the server to get the newest reports.
     [PNGReportManager syncAllReports:^(NSError *error) {
+        //Update our list of reports and redisplay the table
         self.reports = [PNGReportManager getAllReports];
         [self.tableView reloadData];
     }];
