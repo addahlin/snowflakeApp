@@ -57,14 +57,14 @@
     } ];
     */
     //PNGReportManager *reportManager = [[PNGReportManager alloc] init];
-    
-    [PNGReportManager syncAppData:^(NSError *error) {
-        [PNGReportManager syncAllReports:^(NSError *error) {
-            
-        }];
-
-    }];
-    
+//    
+//    [PNGReportManager syncAppData:^(NSError *error) {
+//        [PNGReportManager syncAllReports:^(NSError *error) {
+//            
+//        }];
+//
+//    }];
+//    
         //[reportManager syncAllReports];
     
     //Update the UI

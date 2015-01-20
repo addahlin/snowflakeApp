@@ -25,9 +25,7 @@
     [MagicalRecord setupAutoMigratingCoreDataStack];
     
     //Fire off a sync request
-    [PNGReportManager syncAppData:^(NSError *error) {
-       NSLog(@"data synced from app delegate");
-    }];
+    [PNGReportManager syncAppData];
     
     
     return YES;

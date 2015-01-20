@@ -37,14 +37,19 @@ extern NSString * const PNGReportsDidUpdateNotification;
 
 // Functions to sync the app with the server. These are run asynchronously.
  
-+(void) syncAppData:(void (^)(NSError* error))completionBlock;  //Syncs everything except reports
++(void) syncAppData;  //Syncs everything except reports
++(void) syncAppData:(void (^)(NSError* error))completionBlock;
 
++(void) syncRegions;
 +(void) syncRegions:(void (^)(NSError* error))completionBlock;
 
++(void) syncActivities;
 +(void) syncActivities:(void (^)(NSError* error))completionBlock;
 
++(void) syncLocations;
 +(void) syncLocations:(void (^)(NSError* error))completionBlock;
 
++(void) syncAllReports;
 +(void) syncAllReports:(void (^)(NSError* error))completionBlock;
 
 +(void) syncReportsForLocation:(Location *) location;

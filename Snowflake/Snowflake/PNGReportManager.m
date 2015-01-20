@@ -9,11 +9,15 @@
 #import "PNGReportManager.h"
 #import "PNGReportDetailViewController.h"
 
+
 @implementation PNGReportManager
 
 NSString * const PNGReportsDidUpdateNotification = @"PNGReportsDidUpdateNotification";
 
-// Used to fix up the incoming report text. Should put this somewhere more appropriate.
+//For now, just protect the reports from being synced over and over (this is the only sync the user can control)
+static bool isCurrentlySyncingReports = false;
+
+// Helper function used to fix up the incoming report text. TODO: Should put this somewhere more appropriate.
 + (NSString *) stringByUnescapingCodes: (NSString * ) dataString
 {
     
@@ -142,7 +146,19 @@ finish:
     
 }
 
++(void) syncAppData{
+    
+
+    
+    //Just pass in an empty block, the user will handle the update via Notification
+    [[self class] syncAppData:^(NSError *error) {
+        
+    }];
+}
+
 +(void) syncAppData:(void (^)(NSError* error))completionBlock{
+    
+    NSDictionary *userInfoForNotification = @{};
     
     [self syncRegions:^(NSError *error) {
         if(!error){
@@ -150,16 +166,28 @@ finish:
                 if(!error){
                     [self syncActivities:^(NSError *error) {
                         completionBlock(error);
+                        
+                        //Send a notification that data was updated
+                        [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsDidUpdateNotification object:self userInfo:userInfoForNotification];
+
                     }];
                 } else {
                     NSLog(@"Error syncing Locations");
                     completionBlock(error);
+                    
+                    //Send a notification there was an error
+                    [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsDidUpdateNotification object:self userInfo:userInfoForNotification];
+
                 }
             }];
             
         } else {
             NSLog(@"Error syncing Regions");
             completionBlock(error);
+            
+            //Send a notification there was an error
+            [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsDidUpdateNotification object:self userInfo:userInfoForNotification];
+
         }
     }];
     
@@ -169,6 +197,7 @@ finish:
 //TODO: put somewhere more appropriate
 +(void) buildRegionsFromJSON:(NSData *) json{
     NSError *error;
+
     
     NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:json options:0 error:&error];
     //NSLog(@"JSON data: %@", parsedObject);
@@ -192,25 +221,43 @@ finish:
     [[self class] saveContext];
     
 }
+
+
++(void) syncRegions{
+    //Just pass in an empty callback
+    [[self class] syncRegions:^(NSError *error) {
+        
+    }];
+}
 +(void) syncRegions:(void (^)(NSError* error))completionBlock{
+    
+    NSDictionary *userInfoForNotification = @{};
+    
     //TODO: I really need to turn this into a class member or singleton.
     PNGSnowIOCommunicator *comm = [[PNGSnowIOCommunicator alloc] init];
+    
     [comm getRegionsJSONwithCompletionBlock:^(NSData *data, NSHTTPURLResponse *response, NSError *error) {
+        
         if (!error){
             NSLog(@"Retrieved JSON for regions");
             [self buildRegionsFromJSON:data];
         } else {
             NSLog(@"Error retrieving Regions from server");
         }
+
         if (completionBlock) {
             completionBlock(error);
         }
+        
+        //Send a notification that data was updated
+        [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsDidUpdateNotification object:self userInfo:userInfoForNotification];
+
         
     }];
 }
 
 
-//TODO: put somewhere more appropriate
+//TODO: put somewhere more appropriate?
 +(void) buildActivitiesFromJSON:(NSData *) json{
     NSError *error;
     
@@ -231,9 +278,19 @@ finish:
     
     
 }
+
++(void) syncActivities{
+    [[self class] syncActivities:^(NSError *error) {
+        
+    }];
+}
+
 +(void) syncActivities:(void (^)(NSError* error))completionBlock{
     
     //Get the Activities JSON from the server (async)
+    
+    NSDictionary *userInfoForNotification = @{};
+
     //TODO: I really need to turn this into a class member or singleton.
     PNGSnowIOCommunicator *comm = [[PNGSnowIOCommunicator alloc] init];
     [comm getActivitiesJSONwithCompletionBlock:^(NSData *data, NSHTTPURLResponse *response, NSError *error) {
@@ -246,6 +303,10 @@ finish:
         if (completionBlock){
             completionBlock(error);
         }
+        
+        //Send a notification that data was updated
+        [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsDidUpdateNotification object:self userInfo:userInfoForNotification];
+
     }];
 }
 
@@ -289,9 +350,18 @@ finish:
     
 }
 
++(void) syncLocations{
+    [[self class] syncLocations:^(NSError *error) {
+        
+    }];
+}
+
 +(void) syncLocations:(void (^)(NSError* error))completionBlock{
+    NSDictionary *userInfoForNotification = @{};
+    
     //TODO: I really need to turn this into a class member or singleton.
     PNGSnowIOCommunicator *comm = [[PNGSnowIOCommunicator alloc] init];
+    
     [comm getLocationsJSONwithCompletionBlock:^(NSData *data, NSHTTPURLResponse *response, NSError *error) {
         if (!error){
             NSLog(@"Retrieved JSON for Locations");
@@ -303,6 +373,9 @@ finish:
         if (completionBlock){
             completionBlock(error);
         }
+        //Send a notification that data was updated
+        [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsDidUpdateNotification object:self userInfo:userInfoForNotification];
+
     }];
 }
 
@@ -386,9 +459,32 @@ finish:
     [[self class] saveContext];
 }
 
++(void) syncAllReports{
+    
+    [[self class] syncAllReports:^(NSError *error) {
+        
+    }];
+}
+
 +(void) syncAllReports:(void (^)(NSError* error))completionBlock{
-    //TODO: I really need to turn this into a class member or singleton.
+    
+    //If we're already running a sync operation, don't start a new one
+    // This should be converted to be thread safe, but should be good enough for now as is.
+    if (isCurrentlySyncingReports){
+        if (completionBlock) {
+            //Call the completion block indicating an error.
+            //Just passing nil for now to make things easy (I know the return isn't currently used anywhere.. that could
+            // easily change soon though)
+            completionBlock(nil);
+            return;
+        }
+    }
+    isCurrentlySyncingReports = true;
+    
+    NSDictionary *userInfoForNotification = @{};
+    
     PNGSnowIOCommunicator *comm = [[PNGSnowIOCommunicator alloc] init];
+
     [comm getMostRecentReportsWithOptions:nil completionBlock:^(NSData *data, NSHTTPURLResponse *response, NSError *error) {
         if (!error){
             NSLog(@"Retrieved JSON for Reports");
@@ -402,10 +498,8 @@ finish:
         }
         
         //Fire off a notification that the reports were updated
-        //
-        NSDictionary *userInfo = nil;//@{@"someKey": someValue};
-        [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsDidUpdateNotification object:self userInfo:userInfo];
-        
+        [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsDidUpdateNotification object:self userInfo:userInfoForNotification];
+        isCurrentlySyncingReports = false;
     }];
 }
 

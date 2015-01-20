@@ -90,23 +90,9 @@
 
 - (void) updateRegions{
     
-    //PNGReportManager *rm = [[PNGReportManager alloc] init];
+    self.regions = [PNGReportManager getRegions];
     
-    [PNGReportManager syncRegions:^(NSError *error) {
-        
-        //TODO: Handle errors
-        
-        NSLog(@"Synced regions");
-        //Hide the refresh controller
-        [self.refreshControl endRefreshing];
-        
-        //update our list of regions
-        self.regions = [PNGReportManager getRegions];
-        [self.tableView reloadData];
-        
-    }];
-    
-    
+    [PNGReportManager syncRegions];
 }
 
 - (void)didReceiveMemoryWarning {

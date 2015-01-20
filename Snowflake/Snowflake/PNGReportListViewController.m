@@ -25,7 +25,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [self loadRecentReports];
+    
 }
 
 - (void)viewDidLoad {
@@ -53,13 +53,16 @@
     [self.refreshControl addTarget:self
                             action:@selector(updateData)
                   forControlEvents:UIControlEventValueChanged];
+    
     [self.tableView addSubview:self.refreshControl];
 
-    //Listen for reports
+    //Listen for report updates
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reportsUpdated:)
                                                  name:PNGReportsDidUpdateNotification object:nil];
     
+    //Get the most recent Reports
+    [self loadRecentReports];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -74,33 +77,46 @@
 //Called by PNGReport manager when reports have been updated from the server
 -(void)reportsUpdated:(NSNotification *) notification {
     NSLog(@"*****Reports updated Notification Received!*****");
+    
+    //Reports has been updated, so let's just reload everything
+    self.reports = [PNGReportManager getAllReports];
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
+    
 }
 
 - (void) loadRecentReports {
     //Get all the cached report
     self.reports = [PNGReportManager getAllReports];
-    //TODO: show a spinner so they know it's updating
+    
+    //Show a spinner so they know it's updating
+    
+    [self.refreshControl beginRefreshing];
+    //TODO: This just looks wrong
+    [self.tableView setContentOffset:CGPointMake(0, -self.refreshControl.frame.size.height) animated:NO];
+
+    
     //Send an update request to the server to get the newest reports.
-    [PNGReportManager syncAllReports:^(NSError *error) {
-        //Update our list of reports and redisplay the table
-        self.reports = [PNGReportManager getAllReports];
-        [self.tableView reloadData];
-    }];
+    [PNGReportManager syncAllReports];
     
 }
 
 - (void) updateData{
     
-    //Simulate a delay so we can get a feel for the look and feel of the UI
     NSLog(@"Running update...");
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        //Hide the refresh controller
-        [self.refreshControl endRefreshing];
-        
-        //        [self.tableView reloadData];
-
-
-    });
+    
+    //Send an update request to the server to get the newest reports.
+    [PNGReportManager syncAllReports];
+    
+    //Simulate a delay so we can get a feel for the look and feel of the UI
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+//        //Hide the refresh controller
+//        [self.refreshControl endRefreshing];
+//        
+//        //        [self.tableView reloadData];
+//
+//
+//    });
 }
 
 
