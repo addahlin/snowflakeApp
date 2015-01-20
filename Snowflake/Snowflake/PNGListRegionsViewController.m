@@ -13,7 +13,6 @@
 @interface PNGListRegionsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *regions;
-@property (strong, nonatomic) PNGReportManager *rm;
 
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @end
@@ -75,10 +74,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.rm = [[PNGReportManager alloc] init];
-    
     //Get the list of regions from the Manager
-    self.regions = [self.rm getRegions];
+    self.regions = [PNGReportManager getRegions];
     
     // Initialize the refresh control.
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -93,7 +90,9 @@
 
 - (void) updateRegions{
     
-    [self.rm syncRegions:^(NSError *error) {
+    //PNGReportManager *rm = [[PNGReportManager alloc] init];
+    
+    [PNGReportManager syncRegions:^(NSError *error) {
         
         //TODO: Handle errors
         
@@ -102,7 +101,7 @@
         [self.refreshControl endRefreshing];
         
         //update our list of regions
-        self.regions = [self.rm getRegions];
+        self.regions = [PNGReportManager getRegions];
         [self.tableView reloadData];
         
     }];

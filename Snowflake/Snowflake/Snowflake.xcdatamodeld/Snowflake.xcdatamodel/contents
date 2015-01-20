@@ -15,7 +15,8 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="raw_region_id" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="region" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="locations" inverseEntity="Region" syncable="YES"/>
-        <relationship name="trails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Report" inverseName="trail" inverseEntity="Report" syncable="YES"/>
+        <relationship name="reports" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Report" inverseName="location" inverseEntity="Report" syncable="YES"/>
+        <relationship name="trails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Report" syncable="YES"/>
     </entity>
     <entity name="Region" representedClassName="Region" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
@@ -25,6 +26,7 @@
         <attribute name="swLatitude" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="swLongitude" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="locations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Location" inverseName="region" inverseEntity="Location" syncable="YES"/>
+        <relationship name="reports" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Report" inverseName="region" inverseEntity="Report" syncable="YES"/>
     </entity>
     <entity name="Report" representedClassName="Report" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
@@ -32,16 +34,22 @@
         <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="posted_date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="poster_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="raw_posted_timestamp" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="raw_region_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="raw_report_time" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="raw_trail_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="raw_trail_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="report_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="report_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="trail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="trails" inverseEntity="Location" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="reports" inverseEntity="Location" syncable="YES"/>
+        <relationship name="region" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="reports" inverseEntity="Region" syncable="YES"/>
+        <relationship name="trail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" syncable="YES"/>
     </entity>
     <elements>
         <element name="Activity" positionX="-27" positionY="108" width="128" height="133"/>
-        <element name="Location" positionX="-54" positionY="63" width="128" height="148"/>
-        <element name="Region" positionX="-36" positionY="81" width="128" height="150"/>
-        <element name="Report" positionX="-63" positionY="-18" width="128" height="193"/>
+        <element name="Location" positionX="-54" positionY="63" width="128" height="163"/>
+        <element name="Region" positionX="-36" positionY="81" width="128" height="163"/>
+        <element name="Report" positionX="-63" positionY="-18" width="128" height="283"/>
     </elements>
 </model>

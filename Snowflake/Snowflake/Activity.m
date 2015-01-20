@@ -2,8 +2,8 @@
 //  Activity.m
 //  Snowflake
 //
-//  Created by Andrew Dahlin on 10/15/14.
-//  Copyright (c) 2014 Pangomedia. All rights reserved.
+//  Created by Andrew Dahlin on 1/15/15.
+//  Copyright (c) 2015 Pangomedia. All rights reserved.
 //
 
 #import "Activity.h"

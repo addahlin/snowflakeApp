@@ -16,39 +16,43 @@
 
 @interface PNGReportManager : NSObject
 
+extern NSString * const PNGReportsDidUpdateNotification;
+
++ (NSString *) stringByUnescapingCodes: (NSString * ) dataString;
+
 //The following return data immediately (most likely from Core Data)
--(NSArray *) getRegions;
++(NSArray *) getRegions;
 
--(NSArray *) getActivites;
++(NSArray *) getActivites;
 
--(NSArray *) getLocationsInRegion: (Region *) region;
++(NSArray *) getLocationsInRegion: (Region *) region;
 
--(NSArray *) getLocations;
++(NSArray *) getLocations;
 
--(NSArray *) getReportsForRegion: (Region *) region;
++(NSArray *) getReportsForRegion: (Region *) region;
 
--(NSArray *) getReportsForLocation:(Location *) location;
++(NSArray *) getReportsForLocation:(Location *) location;
 
--(NSArray *) getAllReports;
++(NSArray *) getAllReports;
 
-// Functions to sync the app with the server. This is done asynchronously.
+// Functions to sync the app with the server. These are run asynchronously.
  
--(void) syncAppData:(void (^)(NSError* error))completionBlock;  //Syncs everything except reports
++(void) syncAppData:(void (^)(NSError* error))completionBlock;  //Syncs everything except reports
 
--(void) syncRegions:(void (^)(NSError* error))completionBlock;
++(void) syncRegions:(void (^)(NSError* error))completionBlock;
 
--(void) syncActivities:(void (^)(NSError* error))completionBlock;
++(void) syncActivities:(void (^)(NSError* error))completionBlock;
 
--(void) syncLocations:(void (^)(NSError* error))completionBlock;
++(void) syncLocations:(void (^)(NSError* error))completionBlock;
 
--(void) syncAllReports:(void (^)(NSError* error))completionBlock;
++(void) syncAllReports:(void (^)(NSError* error))completionBlock;
 
--(void) syncReportsForLocation:(Location *) location;
++(void) syncReportsForLocation:(Location *) location;
 
--(void) syncReportsForRegion: (Region *) region;
++(void) syncReportsForRegion: (Region *) region;
 
--(void) syncReportsSinceDate: (NSDate *) date;
++(void) syncReportsSinceDate: (NSDate *) date;
 
--(void) trimOldReports;
++(void) trimOldReports;
 
 @end

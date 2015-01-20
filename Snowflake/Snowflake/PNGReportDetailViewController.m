@@ -9,6 +9,10 @@
 #import "PNGReportDetailViewController.h"
 
 @interface PNGReportDetailViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *ReportTitle;
+@property (weak, nonatomic) IBOutlet UILabel *reportDateOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *reportAuthorOutlet;
+@property (weak, nonatomic) IBOutlet UITextView *reportTextView;
 
 @end
 
@@ -17,6 +21,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // If we don't have a report, we don't have anything to show...
+    if (!self.report) {
+        return;
+    }
+    
+    NSLog(@"Showing details for report: %@", self.report.raw_trail_name);
+    
+    self.reportTextView.text = self.report.text;
+    self.ReportTitle.text = self.report.raw_trail_name;
+    self.reportDateOutlet.text = self.report.raw_report_time;
+    self.reportAuthorOutlet.text = self.report.poster_name;
+ 
+    [self.reportAuthorOutlet sizeToFit];
+    
 }
 
 - (void)didReceiveMemoryWarning {

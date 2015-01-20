@@ -7,6 +7,7 @@
 //
 
 #import "PNGReportListViewController.h"
+#import "PNGReportDetailViewController.h"
 #import "SWRevealViewController.h"
 #import "Region+user.h"
 #import "Report+user.h"
@@ -19,10 +20,8 @@
 
 @implementation PNGReportListViewController 
 {
-    NSArray *myMenuItems;
-    
-
 }
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
@@ -31,8 +30,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    myMenuItems = [NSArray arrayWithObjects:@"object 1", @"object 2", @"Object 3", nil];
     
     // Do any additional setup after loading the view.
     SWRevealViewController *revealController = [self revealViewController];
@@ -58,20 +55,35 @@
                   forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
 
-    
+    //Listen for reports
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reportsUpdated:)
+                                                 name:PNGReportsDidUpdateNotification object:nil];
     
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:PNGReportsDidUpdateNotification object:nil];
+    
+}
+
+//Called by PNGReport manager when reports have been updated from the server
+-(void)reportsUpdated:(NSNotification *) notification {
+    NSLog(@"*****Reports updated Notification Received!*****");
+}
+
 - (void) loadRecentReports {
-    //Better as Singleton
-    PNGReportManager *reportManager = [[PNGReportManager alloc] init];
-    
     //Get all the cached report
-    self.reports = [reportManager getAllReports];
-    
+    self.reports = [PNGReportManager getAllReports];
+    //TODO: show a spinner so they know it's updating
     //Send an update request to the server to get the newest reports.
-    [reportManager syncAllReports:^(NSError *error) {
-        self.reports = [reportManager getAllReports];
+    [PNGReportManager syncAllReports:^(NSError *error) {
+        //Update our list of reports and redisplay the table
+        self.reports = [PNGReportManager getAllReports];
         [self.tableView reloadData];
     }];
     
@@ -128,9 +140,17 @@
     //Get the report to display
     Report *report = [self.reports objectAtIndex:indexPath.row];
     
-    //locationLabel.text = report.trail.name;
-    locationLabel.text = report.raw_trail_name;
-    reportDateLabel.text = @"Wed Jun 26th 6:00PM";
+    // If we know the trial this is for, use that name. Otherwise use whatever they submitted
+    if (report.trail) {
+        locationLabel.text = report.trail.name;
+    } else {
+        locationLabel.text = report.raw_trail_name;
+    }
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    
+    reportDateLabel.text = [formatter stringFromDate:report.report_date];
     descLabel.text = report.text;
     
     return cell;
@@ -144,9 +164,8 @@
      // If they selected a specific safety minute, let the PNGSafetyMinuteDetailViewController know which one
      if ([[segue identifier] isEqualToString:@"showReportDetailFromList"]) {
          NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-         //PNGSafetyMinuteDetailViewController *destViewController = segue.destinationViewController;
-         //destViewController.safetyMinute = [self.minutesForCategory objectAtIndex:indexPath.row];
-         //destViewController.fromCategoryId = [self.category id];
+         PNGReportDetailViewController *destViewController = segue.destinationViewController;
+         destViewController.report = [self.reports objectAtIndex:indexPath.row];
      }
 
 }

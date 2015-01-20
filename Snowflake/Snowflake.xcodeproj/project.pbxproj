@@ -59,10 +59,10 @@
 		00B5A10719E9FEBB00757F29 /* PNGReportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A10619E9FEBB00757F29 /* PNGReportManager.m */; };
 		00E89C891A11BB7200AF6C00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E89C881A11BB7200AF6C00 /* Main.storyboard */; };
 		00F8189E19EF8B9B004F433B /* PNGListLocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F8189D19EF8B9B004F433B /* PNGListLocationsViewController.m */; };
-		00F818A119EF9321004F433B /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F818A019EF9321004F433B /* Region.m */; };
-		00F818A419EF9321004F433B /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F818A319EF9321004F433B /* Report.m */; };
-		00F818A719EF9321004F433B /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F818A619EF9321004F433B /* Activity.m */; };
-		00F818AA19EF9321004F433B /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F818A919EF9321004F433B /* Location.m */; };
+		00FDE34A1A686F410035D308 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FDE3491A686F410035D308 /* Activity.m */; };
+		00FDE34D1A686F420035D308 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FDE34C1A686F420035D308 /* Location.m */; };
+		00FDE3531A686F420035D308 /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FDE3521A686F420035D308 /* Region.m */; };
+		00FDE35C1A6873D10035D308 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FDE35B1A6873D10035D308 /* Report.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,14 +179,14 @@
 		00E89C881A11BB7200AF6C00 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		00F8189C19EF8B9B004F433B /* PNGListLocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGListLocationsViewController.h; sourceTree = "<group>"; };
 		00F8189D19EF8B9B004F433B /* PNGListLocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGListLocationsViewController.m; sourceTree = "<group>"; };
-		00F8189F19EF9321004F433B /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Region.h; sourceTree = "<group>"; };
-		00F818A019EF9321004F433B /* Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Region.m; sourceTree = "<group>"; };
-		00F818A219EF9321004F433B /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
-		00F818A319EF9321004F433B /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
-		00F818A519EF9321004F433B /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
-		00F818A619EF9321004F433B /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
-		00F818A819EF9321004F433B /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		00F818A919EF9321004F433B /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		00FDE3481A686F410035D308 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		00FDE3491A686F410035D308 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		00FDE34B1A686F420035D308 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		00FDE34C1A686F420035D308 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		00FDE3511A686F420035D308 /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Region.h; sourceTree = "<group>"; };
+		00FDE3521A686F420035D308 /* Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Region.m; sourceTree = "<group>"; };
+		00FDE35A1A6873D10035D308 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
+		00FDE35B1A6873D10035D308 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -426,14 +426,14 @@
 		00B5A0C119E9010800757F29 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				00F818A819EF9321004F433B /* Location.h */,
-				00F818A919EF9321004F433B /* Location.m */,
-				00F818A519EF9321004F433B /* Activity.h */,
-				00F818A619EF9321004F433B /* Activity.m */,
-				00F818A219EF9321004F433B /* Report.h */,
-				00F818A319EF9321004F433B /* Report.m */,
-				00F8189F19EF9321004F433B /* Region.h */,
-				00F818A019EF9321004F433B /* Region.m */,
+				00FDE3511A686F420035D308 /* Region.h */,
+				00FDE3521A686F420035D308 /* Region.m */,
+				00FDE34B1A686F420035D308 /* Location.h */,
+				00FDE34C1A686F420035D308 /* Location.m */,
+				00FDE3481A686F410035D308 /* Activity.h */,
+				00FDE3491A686F410035D308 /* Activity.m */,
+				00FDE35A1A6873D10035D308 /* Report.h */,
+				00FDE35B1A6873D10035D308 /* Report.m */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -578,14 +578,14 @@
 				00B5A0A719E8FC9400757F29 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				00B5A04319E8F9D300757F29 /* AppDelegate.m in Sources */,
 				005D96ED19EF812600567322 /* PNGListRegionsViewController.m in Sources */,
+				00FDE34D1A686F420035D308 /* Location.m in Sources */,
+				00FDE35C1A6873D10035D308 /* Report.m in Sources */,
 				007A68A11A42A21A00D06838 /* PNGSettingsMenuViewController.m in Sources */,
 				00B5A0B719E8FC9400757F29 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				00B5A0B519E8FC9400757F29 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
-				00F818A419EF9321004F433B /* Report.m in Sources */,
 				00B5A0FD19E9B72A00757F29 /* PNGSettings.m in Sources */,
-				00F818A119EF9321004F433B /* Region.m in Sources */,
 				00999C6E1A2D5C9B004BF980 /* PNGReportListViewController.m in Sources */,
-				00F818A719EF9321004F433B /* Activity.m in Sources */,
+				00FDE34A1A686F410035D308 /* Activity.m in Sources */,
 				00B5A10419E9BFE400757F29 /* PNGGetDataFromURLHelper.m in Sources */,
 				00F8189E19EF8B9B004F433B /* PNGListLocationsViewController.m in Sources */,
 				00B5A04019E8F9D300757F29 /* main.m in Sources */,
@@ -593,7 +593,6 @@
 				00B5A0BA19E8FC9400757F29 /* MagicalRecord+iCloud.m in Sources */,
 				00B5A0BD19E8FC9400757F29 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				00B5A0AE19E8FC9400757F29 /* NSManagedObject+MagicalFinders.m in Sources */,
-				00F818AA19EF9321004F433B /* Location.m in Sources */,
 				00B5A0A919E8FC9400757F29 /* NSObject+MagicalDataImport.m in Sources */,
 				00B5A0AB19E8FC9400757F29 /* NSString+MagicalDataImport.m in Sources */,
 				00B5A04919E8F9D300757F29 /* ViewController.m in Sources */,
@@ -604,6 +603,7 @@
 				00B5A0BC19E8FC9400757F29 /* MagicalRecord+Setup.m in Sources */,
 				00B5A0B919E8FC9400757F29 /* MagicalRecord+ErrorHandling.m in Sources */,
 				00B5A0B819E8FC9400757F29 /* MagicalRecord+Actions.m in Sources */,
+				00FDE3531A686F420035D308 /* Region.m in Sources */,
 				00B5A10719E9FEBB00757F29 /* PNGReportManager.m in Sources */,
 				00B5A04619E8F9D300757F29 /* Snowflake.xcdatamodeld in Sources */,
 				00B5A0EE19E9066F00757F29 /* Location+user.m in Sources */,
