@@ -16,7 +16,11 @@
 
 @interface PNGReportManager : NSObject
 
-extern NSString * const PNGReportsDidUpdateNotification;
+extern NSString * const PNGReportsWillUpdateNotification;
+extern NSString * const PNGReportsDidUpdateNotification;    //implemented
+
+extern NSString * const PNGAppDataWillUpdateNotification;
+extern NSString * const PNGAppDataDidUpdateNotification;
 
 + (NSString *) stringByUnescapingCodes: (NSString * ) dataString;
 

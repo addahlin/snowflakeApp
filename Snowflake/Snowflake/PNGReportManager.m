@@ -12,7 +12,11 @@
 
 @implementation PNGReportManager
 
+NSString * const PNGReportsWillUpdateNotification = @"PNGReportsWillUpdateNotification";
 NSString * const PNGReportsDidUpdateNotification = @"PNGReportsDidUpdateNotification";
+
+NSString * const PNGAppDataWillUpdateNotification = @"PNGAppDataWillUpdateNotification";
+NSString * const PNGAppDataDidUpdateNotification = @"PNGAppDataDidUpdateNotification";
 
 //For now, just protect the reports from being synced over and over (this is the only sync the user can control)
 static bool isCurrentlySyncingReports = false;
@@ -160,6 +164,10 @@ finish:
     
     NSDictionary *userInfoForNotification = @{};
     
+    //Fire off a notification that the reports are about to be updated
+    [[NSNotificationCenter defaultCenter] postNotificationName:PNGAppDataWillUpdateNotification object:self userInfo:userInfoForNotification];
+
+    
     [self syncRegions:^(NSError *error) {
         if(!error){
             [self syncLocations:^(NSError *error) {
@@ -167,8 +175,8 @@ finish:
                     [self syncActivities:^(NSError *error) {
                         completionBlock(error);
                         
-                        //Send a notification that data was updated
-                        [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsDidUpdateNotification object:self userInfo:userInfoForNotification];
+                        //Send a notification that data was successfully updated
+                        [[NSNotificationCenter defaultCenter] postNotificationName:PNGAppDataDidUpdateNotification object:self userInfo:userInfoForNotification];
 
                     }];
                 } else {
@@ -176,7 +184,7 @@ finish:
                     completionBlock(error);
                     
                     //Send a notification there was an error
-                    [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsDidUpdateNotification object:self userInfo:userInfoForNotification];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:PNGAppDataDidUpdateNotification object:self userInfo:userInfoForNotification];
 
                 }
             }];
@@ -186,7 +194,7 @@ finish:
             completionBlock(error);
             
             //Send a notification there was an error
-            [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsDidUpdateNotification object:self userInfo:userInfoForNotification];
+            [[NSNotificationCenter defaultCenter] postNotificationName:PNGAppDataDidUpdateNotification object:self userInfo:userInfoForNotification];
 
         }
     }];
@@ -482,6 +490,9 @@ finish:
     isCurrentlySyncingReports = true;
     
     NSDictionary *userInfoForNotification = @{};
+    
+    //Fire off a notification that the reports are about to be updated
+    [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsWillUpdateNotification object:self userInfo:userInfoForNotification];
     
     PNGSnowIOCommunicator *comm = [[PNGSnowIOCommunicator alloc] init];
 
