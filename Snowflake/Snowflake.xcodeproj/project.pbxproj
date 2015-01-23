@@ -10,6 +10,7 @@
 		005D96ED19EF812600567322 /* PNGListRegionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005D96EC19EF812600567322 /* PNGListRegionsViewController.m */; };
 		007A68A11A42A21A00D06838 /* PNGSettingsMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A68A01A42A21A00D06838 /* PNGSettingsMenuViewController.m */; };
 		007A68A41A42A6EC00D06838 /* PNGReportDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A68A31A42A6EC00D06838 /* PNGReportDetailViewController.m */; };
+		007F26A81A71B53D007E9CBA /* PNGSnowflakeSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F26A71A71B53D007E9CBA /* PNGSnowflakeSettings.m */; };
 		00999C6B1A2C3D71004BF980 /* SimpleInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00999C6A1A2C3D71004BF980 /* SimpleInterface.storyboard */; };
 		00999C6E1A2D5C9B004BF980 /* PNGReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00999C6D1A2D5C9B004BF980 /* PNGReportListViewController.m */; };
 		00999C721A2D6074004BF980 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00999C711A2D6074004BF980 /* SWRevealViewController.m */; };
@@ -82,6 +83,8 @@
 		007A68A01A42A21A00D06838 /* PNGSettingsMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGSettingsMenuViewController.m; sourceTree = "<group>"; };
 		007A68A21A42A6EC00D06838 /* PNGReportDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGReportDetailViewController.h; sourceTree = "<group>"; };
 		007A68A31A42A6EC00D06838 /* PNGReportDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGReportDetailViewController.m; sourceTree = "<group>"; };
+		007F26A61A71B53D007E9CBA /* PNGSnowflakeSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGSnowflakeSettings.h; sourceTree = "<group>"; };
+		007F26A71A71B53D007E9CBA /* PNGSnowflakeSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGSnowflakeSettings.m; sourceTree = "<group>"; };
 		00999C6A1A2C3D71004BF980 /* SimpleInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SimpleInterface.storyboard; path = ../SimpleInterface.storyboard; sourceTree = "<group>"; };
 		00999C6C1A2D5C9B004BF980 /* PNGReportListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGReportListViewController.h; sourceTree = "<group>"; };
 		00999C6D1A2D5C9B004BF980 /* PNGReportListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGReportListViewController.m; sourceTree = "<group>"; };
@@ -447,6 +450,8 @@
 				00B5A0FF19E9BCDB00757F29 /* PNGSnowIOCommunicator.m */,
 				00B5A10519E9FEBB00757F29 /* PNGReportManager.h */,
 				00B5A10619E9FEBB00757F29 /* PNGReportManager.m */,
+				007F26A61A71B53D007E9CBA /* PNGSnowflakeSettings.h */,
+				007F26A71A71B53D007E9CBA /* PNGSnowflakeSettings.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -612,6 +617,7 @@
 				007A68A41A42A6EC00D06838 /* PNGReportDetailViewController.m in Sources */,
 				00B5A0AD19E8FC9400757F29 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				00B5A10019E9BCDB00757F29 /* PNGSnowIOCommunicator.m in Sources */,
+				007F26A81A71B53D007E9CBA /* PNGSnowflakeSettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -76,7 +76,7 @@
 
 //Called by PNGReport manager when reports have been updated from the server
 -(void)reportsUpdated:(NSNotification *) notification {
-    NSLog(@"*****Reports updated Notification Received!*****");
+    //NSLog(@"*****Reports updated Notification Received!*****");
     
     //Reports has been updated, so let's just reload everything
     self.reports = [PNGReportManager getAllReports];

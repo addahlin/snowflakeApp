@@ -8,7 +8,7 @@
 
 #import "PNGReportManager.h"
 #import "PNGReportDetailViewController.h"
-
+#import "PNGSnowflakeSettings.h"
 
 @implementation PNGReportManager
 
@@ -162,7 +162,7 @@ finish:
 
 +(void) syncAppData:(void (^)(NSError* error))completionBlock{
     
-    NSDictionary *userInfoForNotification = @{};
+    NSMutableDictionary *userInfoForNotification = [NSMutableDictionary dictionary];
     
     //Fire off a notification that the reports are about to be updated
     [[NSNotificationCenter defaultCenter] postNotificationName:PNGAppDataWillUpdateNotification object:self userInfo:userInfoForNotification];
@@ -184,6 +184,7 @@ finish:
                     completionBlock(error);
                     
                     //Send a notification there was an error
+                    userInfoForNotification[@"error"] = error;
                     [[NSNotificationCenter defaultCenter] postNotificationName:PNGAppDataDidUpdateNotification object:self userInfo:userInfoForNotification];
 
                 }
@@ -194,6 +195,7 @@ finish:
             completionBlock(error);
             
             //Send a notification there was an error
+            userInfoForNotification[@"error"] = error;
             [[NSNotificationCenter defaultCenter] postNotificationName:PNGAppDataDidUpdateNotification object:self userInfo:userInfoForNotification];
 
         }
@@ -239,8 +241,6 @@ finish:
 }
 +(void) syncRegions:(void (^)(NSError* error))completionBlock{
     
-    NSDictionary *userInfoForNotification = @{};
-    
     //TODO: I really need to turn this into a class member or singleton.
     PNGSnowIOCommunicator *comm = [[PNGSnowIOCommunicator alloc] init];
     
@@ -257,9 +257,6 @@ finish:
             completionBlock(error);
         }
         
-        //Send a notification that data was updated
-        [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsDidUpdateNotification object:self userInfo:userInfoForNotification];
-
         
     }];
 }
@@ -296,8 +293,6 @@ finish:
 +(void) syncActivities:(void (^)(NSError* error))completionBlock{
     
     //Get the Activities JSON from the server (async)
-    
-    NSDictionary *userInfoForNotification = @{};
 
     //TODO: I really need to turn this into a class member or singleton.
     PNGSnowIOCommunicator *comm = [[PNGSnowIOCommunicator alloc] init];
@@ -312,9 +307,6 @@ finish:
             completionBlock(error);
         }
         
-        //Send a notification that data was updated
-        [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsDidUpdateNotification object:self userInfo:userInfoForNotification];
-
     }];
 }
 
@@ -365,7 +357,6 @@ finish:
 }
 
 +(void) syncLocations:(void (^)(NSError* error))completionBlock{
-    NSDictionary *userInfoForNotification = @{};
     
     //TODO: I really need to turn this into a class member or singleton.
     PNGSnowIOCommunicator *comm = [[PNGSnowIOCommunicator alloc] init];
@@ -381,8 +372,6 @@ finish:
         if (completionBlock){
             completionBlock(error);
         }
-        //Send a notification that data was updated
-        [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsDidUpdateNotification object:self userInfo:userInfoForNotification];
 
     }];
 }
@@ -489,7 +478,7 @@ finish:
     }
     isCurrentlySyncingReports = true;
     
-    NSDictionary *userInfoForNotification = @{};
+    NSMutableDictionary *userInfoForNotification = [NSMutableDictionary dictionary];
     
     //Fire off a notification that the reports are about to be updated
     [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsWillUpdateNotification object:self userInfo:userInfoForNotification];
@@ -502,13 +491,19 @@ finish:
             [self buildReportsFromJSON:data];
         } else {
             NSLog(@"Error retrieving Reports from server");
+            
+            //Save the error to send it with the notification
+            userInfoForNotification[@"error"] = error;
         }
+        
+        [self trimOldReports];
         
         if (completionBlock) {
             completionBlock(error);
         }
         
         //Fire off a notification that the reports were updated
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:PNGReportsDidUpdateNotification object:self userInfo:userInfoForNotification];
         isCurrentlySyncingReports = false;
     }];
@@ -527,6 +522,8 @@ finish:
 }
 
 +(void) trimOldReports{
+    
+    NSLog(@"Trimming reports more than %i days old", [[PNGSnowflakeSettings sharedSettings] daysToRetainReports]);
     
 }
 
