@@ -20,7 +20,6 @@
 		00B5A04319E8F9D300757F29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A04219E8F9D300757F29 /* AppDelegate.m */; };
 		00B5A04619E8F9D300757F29 /* Snowflake.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A04419E8F9D300757F29 /* Snowflake.xcdatamodeld */; };
 		00B5A04919E8F9D300757F29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A04819E8F9D300757F29 /* ViewController.m */; };
-		00B5A04C19E8F9D300757F29 /* Main-previous.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A04A19E8F9D300757F29 /* Main-previous.storyboard */; };
 		00B5A04E19E8F9D300757F29 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A04D19E8F9D300757F29 /* Images.xcassets */; };
 		00B5A05119E8F9D300757F29 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A04F19E8F9D300757F29 /* LaunchScreen.xib */; };
 		00B5A05D19E8F9D300757F29 /* SnowflakeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A05C19E8F9D300757F29 /* SnowflakeTests.m */; };
@@ -100,7 +99,6 @@
 		00B5A04519E8F9D300757F29 /* Snowflake.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Snowflake.xcdatamodel; sourceTree = "<group>"; };
 		00B5A04719E8F9D300757F29 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		00B5A04819E8F9D300757F29 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		00B5A04B19E8F9D300757F29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Main-previous.storyboard"; sourceTree = "<group>"; };
 		00B5A04D19E8F9D300757F29 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		00B5A05019E8F9D300757F29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		00B5A05619E8F9D300757F29 /* SnowflakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnowflakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,7 +266,6 @@
 				00B5A04219E8F9D300757F29 /* AppDelegate.m */,
 				00B5A04719E8F9D300757F29 /* ViewController.h */,
 				00B5A04819E8F9D300757F29 /* ViewController.m */,
-				00B5A04A19E8F9D300757F29 /* Main-previous.storyboard */,
 				00E89C881A11BB7200AF6C00 /* Main.storyboard */,
 				00999C6A1A2C3D71004BF980 /* SimpleInterface.storyboard */,
 				00B5A04D19E8F9D300757F29 /* Images.xcassets */,
@@ -545,7 +542,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00B5A04C19E8F9D300757F29 /* Main-previous.storyboard in Resources */,
 				00B5A05119E8F9D300757F29 /* LaunchScreen.xib in Resources */,
 				00999C761A2D647E004BF980 /* reveal-icon@2x.png in Resources */,
 				00999C6B1A2C3D71004BF980 /* SimpleInterface.storyboard in Resources */,
@@ -640,14 +636,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		00B5A04A19E8F9D300757F29 /* Main-previous.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				00B5A04B19E8F9D300757F29 /* Base */,
-			);
-			name = "Main-previous.storyboard";
-			sourceTree = "<group>";
-		};
 		00B5A04F19E8F9D300757F29 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
